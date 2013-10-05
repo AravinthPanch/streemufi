@@ -4,7 +4,7 @@ var dal = require('./dal')
 http.createServer(function (req, res) {
     res.writeHead(200, {'Content-Type': 'text/plain', 'Access-Control-Allow-Origin' : '*'});
 
-    if (req.method == 'POST') {
+    if (req.method == 'POST2') {
         var body = '';
         req.on('data', function (data) {
             body += data;
