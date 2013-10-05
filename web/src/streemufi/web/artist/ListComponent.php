@@ -32,7 +32,7 @@ class ListComponent extends Component {
             $artists[] = array(
                 'name' => $artist['name'],
                 'url' => array(
-                    'href' => $artist['vanityUrl']
+                    'href' => $artist['url']
                 )
             );
         }

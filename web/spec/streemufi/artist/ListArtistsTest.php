@@ -27,4 +27,3 @@ class ListArtistsTest extends Specification {
     }
 
 }
- 

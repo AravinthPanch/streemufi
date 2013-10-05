@@ -1,6 +1,6 @@
 <?php
 
-require_once("bootstrap.php");
+$factory = require_once("bootstrap.php");
 
 use streemufi\web\StreemufiModule;
 use streemufi\WebApplication;
@@ -10,5 +10,5 @@ unset($_REQUEST['_']);
 $request = $_REQUEST['-'];
 unset($_REQUEST['-']);
 
-$app = new WebApplication($route, StreemufiModule::$CLASS);
+$app = new WebApplication($route, StreemufiModule::$CLASS, $factory);
 $app->handleRequest($request);
