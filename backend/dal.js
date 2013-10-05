@@ -11,7 +11,7 @@ function startConnection(){
         password : '',
         database	: 'test'
     });
-    
+
     connection.connect(function(err) {
         response = 'MySql Connection is started'
         console.log(response)
@@ -25,17 +25,18 @@ function stopConnection(){
     });
 };
 
-function insertQuery(table , param){	
-	var UUID = Math.floor((Math.random()*100000)+1);
-	var url = param.name + UUID
-    
+function insertQuery(table , param, callback){
+    var UUID = Math.floor((Math.random()*100000)+1);
+    var url = param.name + UUID
+
     var query = 'INSERT INTO ' + table + '(id, name, contact, location, text, video, url)' + " VALUES ('" + UUID  + "' , '" +
         param.name + "' , '" + param.contact + "' , '" + param.location + "' , '" + param.text + "' , '" + param.video +
-       "' , '" + url + "')"
+        "' , '" + url + "')"
 
     connection.query(query, function(err, result) {
         if(err == null) {
             console.log('SQL INSERT SUCCESS')
+            callback.end(JSON.stringify(url))
         }
         else {
             console.log('ERROR IN SQL\n' + err)
@@ -43,16 +44,16 @@ function insertQuery(table , param){
     });
 };
 
-function getAllArtist(){
+function getAllArtist(callback){
     var query = 'SELECT name, url FROM artist'
 
     connection.query(query, function(err, result) {
-        if(err == null) {                        
-            response = { 
-            	count : result.length,
-            	artists : result
+        if(err == null) {
+            response = {
+                count : result.length,
+                artists : result
             };            
-            console.log(response)
+            callback.end(JSON.stringify(response))
         }
         else {
             console.log('ERROR IN SQL\n' + err)
@@ -61,15 +62,15 @@ function getAllArtist(){
 };
 
 
-function getArtist(param){
+function getArtist(param,callback){
     var query = "SELECT * FROM artist WHERE url = '" + param + "'"
 
     connection.query(query, function(err, result) {
-        if(err == null) {                        
-            response = {             	
-            	artist : result[0]
-            };            
-            console.log(result[0])
+        if(err == null) {
+            response = {
+                artist : result[0]
+            };
+            callback.end(JSON.stringify(response))
         }
         else {
             console.log('ERROR IN SQL\n' + err)
@@ -77,14 +78,14 @@ function getArtist(param){
     });
 };
 
-exports.setData = function(request){
+exports.postData = function(request, callback){
 
     startConnection();
-    //insertQuery('artist',request)
-    //getAllArtist()
-    getArtist('Aravinth15592')
+    insertQuery('artist',request, callback)
     stopConnection();
 
+    //getAllArtist(callback)
+    //getArtist('Aravinth96624', callback)
 
     // if(request != undefined){
     //     switch(request.messageType){
