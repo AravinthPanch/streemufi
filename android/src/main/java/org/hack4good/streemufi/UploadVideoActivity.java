@@ -1,6 +1,7 @@
 package org.hack4good.streemufi;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.IntentSender;
@@ -11,6 +12,8 @@ import android.widget.Toast;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesClient;
 import com.google.android.gms.plus.PlusClient;
+
+import org.hack4good.streemufi.upload.DataUploadService;
 
 public class UploadVideoActivity extends Activity implements GooglePlayServicesClient.ConnectionCallbacks, GooglePlayServicesClient.OnConnectionFailedListener {
 
@@ -36,6 +39,31 @@ public class UploadVideoActivity extends Activity implements GooglePlayServicesC
         mConnectionProgressDialog = new ProgressDialog(this);
         mConnectionProgressDialog.setMessage("Signing in...");
 
+        findViewById(R.id.upload).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ServiceLocator.getDataUploadService().uploadArtist(App.actArtist,
+                        new DataUploadService.SuccessCallback() {
+                            @Override
+                            public void onSuccess() {
+                                new AlertDialog.Builder(UploadVideoActivity.this)
+                                        .setMessage("Artist is saved")
+                                        .setPositiveButton("OK",null)
+                                        .show();
+                            }
+                        },
+                        new DataUploadService.FailCallback() {
+                            @Override
+                            public void onFail() {
+                                new AlertDialog.Builder(UploadVideoActivity.this)
+                                        .setMessage("There was a problem")
+                                        .setPositiveButton("OK",null)
+                                        .show();
+                            }
+                        }
+                );
+            }
+        });
     }
 
     private void wireButtons() {
@@ -46,7 +74,7 @@ public class UploadVideoActivity extends Activity implements GooglePlayServicesC
             }
         });
 
-        findViewById(R.id.nextButton).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.upload).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(UploadVideoActivity.this, EditDataActivity.class);

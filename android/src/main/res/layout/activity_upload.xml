@@ -33,7 +33,7 @@
 
     <Button
         android:text="upload"
-        android:id="@+id/nextButton"
+        android:id="@+id/upload"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
