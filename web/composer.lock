@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "fef2d21f663f441e6e758fb005a1568d",
+    "hash": "d75ca1e42bffbc4e6fa156c9afca3b3a",
     "packages": [
         {
             "name": "nikic/php-parser",
@@ -191,8 +191,14 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "http://localhost/watoki/factory/.git",
-                "reference": "1b60df551c7b0f5d4dab0802de91cbd745aa31eb"
+                "url": "https://github.com/watoki/factory.git",
+                "reference": "1feb6a35e2d3f5c022ac0ea7abc5eaea6cbabcc5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/watoki/factory/zipball/1feb6a35e2d3f5c022ac0ea7abc5eaea6cbabcc5",
+                "reference": "1feb6a35e2d3f5c022ac0ea7abc5eaea6cbabcc5",
+                "shasum": ""
             },
             "require": {
                 "nikic/php-parser": "0.9.4",
@@ -208,6 +214,7 @@
                     "spec\\watoki\\factory": ""
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -224,7 +231,7 @@
                 "dependency injection",
                 "watoki"
             ],
-            "time": "2013-09-18 08:29:59"
+            "time": "2013-10-05 07:41:09"
         },
         {
             "name": "watoki/smokey",
