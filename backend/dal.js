@@ -82,10 +82,11 @@ function getArtist(param,callback){
 exports.postData = function(request, callback){
 
     startConnection();
-    insertQuery('artist',request, callback)
+    //insertQuery('artist',request, callback)
+    getAllArtist(callback)
     stopConnection();
 
-    //getAllArtist(callback)
+    
     //getArtist('Aravinth96624', callback)
 
     // if(request != undefined){

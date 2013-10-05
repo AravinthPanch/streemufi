@@ -6,13 +6,14 @@ http.createServer(function (req, res) {
 
     if (req.method == 'POST') {
         var body = '';
-        req.on('data', function (data) {
-            body += data;
-        });
-        req.on('end', function () {
-            body = JSON.parse(body);            
-            dal.postData(body, res)
-        });
+        dal.postData(body, res)
+        // req.on('data', function (data) {
+        //     body += data;
+        // });
+        // req.on('end', function () {
+        //     body = JSON.parse(body);            
+        //     dal.postData(body, res)
+        // });
     }
     else{
         res.end('GET:')
