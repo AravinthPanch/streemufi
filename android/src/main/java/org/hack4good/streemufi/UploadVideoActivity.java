@@ -23,8 +23,8 @@ public class UploadVideoActivity extends Activity implements GooglePlayServicesC
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setTitle("Step 2 - upload the Video");
-        setContentView(R.layout.upload_layout);
+        setTitle("Step 3 - Upload");
+        setContentView(R.layout.activity_upload);
 
         wireButtons();
 
@@ -73,6 +73,11 @@ public class UploadVideoActivity extends Activity implements GooglePlayServicesC
     public void onConnected(Bundle bundle) {
         String accountName = mPlusClient.getAccountName();
         Toast.makeText(this, accountName + " is connected.", Toast.LENGTH_LONG).show();
+
+        findViewById(R.id.sign_in_button).setVisibility(View.GONE);
+
+        mConnectionProgressDialog.dismiss();
+        mConnectionProgressDialog.cancel();
     }
 
     @Override

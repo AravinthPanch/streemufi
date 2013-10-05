@@ -5,33 +5,36 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <Button
-        android:text="Record now"
-        android:id="@+id/recButton"
+
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/sign_in_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
     <LinearLayout
-        android:orientation="horizontal"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/user_details_container"
+        android:visibility="gone"
+        >
 
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/url"
-            android:hint="or enter url" />
-
-        <Button
-            android:text="browser"
-            android:id="@+id/browseButton"
+        <TextView
+            android:text="name:"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
+
     </LinearLayout>
 
+    <View
+        android:layout_weight="1"
+        android:layout_height="0dip"
+        android:layout_width="match_parent" />
+
     <Button
-        android:text="Next"
+        android:text="upload"
         android:id="@+id/nextButton"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
 </LinearLayout>
