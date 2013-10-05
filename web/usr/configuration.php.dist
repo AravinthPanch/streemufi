@@ -1,0 +1,12 @@
+<?php
+namespace streemufi\usr;
+
+use watoki\factory\Factory;
+
+class Configuration extends \streemufi\Configuration {
+
+}
+
+return function(Factory $factory) {
+    $factory->setSingleton(\streemufi\Configuration::$CLASS, new Configuration());
+};

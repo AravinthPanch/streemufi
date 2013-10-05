@@ -30,7 +30,7 @@
                 <span class="icon-bar"></span>
             </button>
             <!-- You'll want to use a responsive image option so this logo looks good on devices - I recommend using something like retina.js (do a quick Google search for it and you'll find it) -->
-            <a class="navbar-brand logo-nav" href="/"><img src="http://placehold.it/150x75&text=Logo"/></a>
+            <a class="navbar-brand logo-nav" href="/"><img src="img/streemufi.png"/></a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -54,22 +54,27 @@
         </div>
     </div>
 
-    <div class="col-lg-8 row top-buffer">
+    <div property="artist" class="col-lg-8 row top-buffer">
 		<hr/>
         <div class="col-lg-3 col-md-3">
             <a href="#"><img class="img-responsive" src="img/profile.png"/></a>
         </div>
 
+<<<<<<< HEAD
         <div class="col-lg-5 col-md-5">
             <h4>Artist One</h4>
+=======
+        <div class="col-lg-6 col-md-6">
+            <h4 property="name">Artist One</h4>
+>>>>>>> 1a18f84de7b7183a2247fb341609d971f2dd2c49
 
-            <p>Spotted at: Berlin - Warschauer Straße</p>
-            <a class="btn btn-primary" href="artist.html">View Artist <span class="glyphicon glyphicon-chevron-right"></span></a>
+            <p property="location">Spotted at: Berlin - Warschauer Straße</p>
+            <a property="url" class="btn btn-primary" href="artist.html">View Artist <span class="glyphicon glyphicon-chevron-right"></span></a>
         </div>
 
     </div>
 
-    <div class="col-lg-8 row top-buffer">
+    <div property="artist" class="col-lg-8 row top-buffer">
 
         <div class="col-lg-3 col-md-3">
             <a href="#"><img class="img-responsive" src="img/profile.png"/></a>

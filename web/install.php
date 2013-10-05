@@ -14,6 +14,11 @@ if (!file_exists('.htaccess')) {
     copy('.htaccess.dist', '.htaccess');
 }
 
+if (!file_exists('usr/configuration.php')) {
+    echo "# Copying user configuration" . PHP_EOL;
+    copy('usr/configuration.php.dist', 'usr/configuration.php');
+}
+
 echo "# Installing dependencies" . PHP_EOL;
 echo shell_exec("php build/composer.phar install --dev");
 
