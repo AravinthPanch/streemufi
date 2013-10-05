@@ -7,7 +7,7 @@ use watoki\curir\Path;
 use watoki\curir\router\RedirectRouter;
 use watoki\curir\Router;
 
-class FreemufiModule extends Module {
+class StreemufiModule extends Module {
 
     static $CLASS = __CLASS__;
 
