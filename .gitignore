@@ -2,4 +2,5 @@
 /web/vendor
 /web/.htaccess
 /web/build
+/web/usr/configuration.php
 Thumbs.db

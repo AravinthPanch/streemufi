@@ -33,7 +33,8 @@ class ListComponent extends Component {
                 'name' => $artist['name'],
                 'url' => array(
                     'href' => $artist['url']
-                )
+                ),
+                'location' => null
             );
         }
         return $artists;
