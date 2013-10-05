@@ -11,6 +11,9 @@ function startConnection(){
         user      : 'streemuf',
         password : 'yivGealebeagg',
         database  : 'streemuf'
+        // user     : 'root',
+        // password : '',
+        // database  : 'test'
     });
 
     connection.connect(function(err) {
@@ -79,32 +82,29 @@ function getArtist(param,callback){
     });
 };
 
-exports.postData = function(request, callback){
-
-    startConnection();
-    insertQuery('artist',request, callback)
-    //getAllArtist(callback)
-    stopConnection();
-
-    
-    //getArtist('Aravinth96624', callback)
-
-    // if(request != undefined){
-    //     switch(request.messageType){
-    //         case 'newUserCreateRequest' :
-    //             console.log('new user created');
-    //             sqlConnection();
-    //             insertQuery('artist',request.data)	
-    //             return 'new user created ' + results;                
-    //             break;
-    //     }
-    // }else{
-    //     return 'NO DATA SENT';
-    // }
+exports.postData = function(entity, data, callback){
+    switch(entity){
+        case 'artist' :
+            startConnection();
+            insertQuery('artist', data, callback)
+            stopConnection();
+            break;
+    }
 };
 
-exports.getData = function(request){
-
+exports.getData = function(entity, data, callback){
+    switch(entity){
+        case 'artist' :
+            startConnection();
+            getAllArtist(callback)
+            stopConnection();
+            break;
+        case 'artist' :
+            startConnection();
+            getArtist('Aravinth96624', callback)
+            stopConnection();
+            break;
+    }
 };
 
 
