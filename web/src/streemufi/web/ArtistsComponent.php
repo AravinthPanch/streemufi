@@ -1,5 +1,5 @@
 <?php
-namespace streemufi\web\artist;
+namespace streemufi\web;
 
 use streemufi\stores\ArtistStore;
 use watoki\curir\controller\Component;
@@ -7,7 +7,7 @@ use watoki\curir\controller\Module;
 use watoki\curir\Path;
 use watoki\factory\Factory;
 
-class ListComponent extends Component {
+class ArtistsComponent extends Component {
 
     static $CLASS = __CLASS__;
 

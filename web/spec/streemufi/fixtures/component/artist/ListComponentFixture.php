@@ -2,10 +2,10 @@
 namespace spec\streemufi\fixtures\component\artist;
 
 use spec\streemufi\fixtures\component\ComponentFixture;
-use streemufi\web\artist\ListComponent;
+use streemufi\web\ArtistsComponent;
 
 /**
- * @property ListComponent component
+ * @property \streemufi\web\ArtistsComponent component
  */
 class ListComponentFixture extends ComponentFixture {
 
@@ -26,7 +26,7 @@ class ListComponentFixture extends ComponentFixture {
     }
 
     protected function getComponentClass() {
-        return ListComponent::$CLASS;
+        return \streemufi\web\ArtistsComponent::$CLASS;
     }
 
     private function getFieldOfArtist($int, $field) {
