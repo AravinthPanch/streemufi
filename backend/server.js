@@ -4,15 +4,17 @@ var dal = require('./dal')
 http.createServer(function (req, res) {
     res.writeHead(200, {'Content-Type': 'text/plain', 'Access-Control-Allow-Origin' : '*'});
 
-    if (req.method == 'POST2') {
-        var body = '';
-        req.on('data', function (data) {
-            body += data;
-        });
-        req.on('end', function () {
-            body = JSON.parse(body);
-            res.end('POST:'
-                + body)
+    if (req.method == 'POST') {
+        res.end('POST:')
+
+        // var body = '';
+        // req.on('data', function (data) {
+        //     body += data;
+        // });
+        // req.on('end', function () {
+        //     body = JSON.parse(body);
+        //     res.end('POST:'
+        //         + body)
             //dal.postData(body, res)
         });
     }
