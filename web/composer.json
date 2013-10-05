@@ -2,7 +2,10 @@
     "name": "panch-aravinth/streemufi",
     "description": "Street Music Finder | web app",
     "authors": [
-        { "email": "Nikolas.M@rtens.org" }
+        {
+            "name": "Nikolas Martens",
+            "email": "Nikolas.M@rtens.org"
+        }
     ],
     "require": {
         "php": ">=5.3.8"
