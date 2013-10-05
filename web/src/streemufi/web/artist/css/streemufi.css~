@@ -14,7 +14,9 @@ footer {
 
 .top-buffer { margin-top:100px;}
 
-.big-buffer {margin-top: 150px;}
+.small-top-buffer { margin-top:50px;}
+
+.bottom-buffer {margin-bottom: 100px;}
 
 /** video embedding http://www.elmastudio.de/programmierung/css/css-tipp-eingebettete-videos-fur-responsive-webdesigns-optimieren/ **/
 .elastic-video {
@@ -23,7 +25,6 @@ footer {
 	padding-top: 15px;
 	height: 0;
 	overflow: hidden;
-	z-index: -1;
 }
 .elastic-video iframe {
 	position: absolute;
