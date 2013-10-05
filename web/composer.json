@@ -8,9 +8,14 @@
         }
     ],
     "require": {
-        "php": ">=5.3.8"
+        "php": ">=5.3.8",
+        "watoki/tempan": "*",
+        "watoki/factory": "*",
+        "watoki/curir": "*"
     },
     "require-dev": {
+        "rtens/mockster": "2.*",
+        "watoki/scrut": "*",
         "phpunit/phpunit": "3.7.*"
     },
     "minimum-stability": "dev",
