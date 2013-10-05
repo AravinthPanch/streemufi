@@ -33,6 +33,13 @@ public class UploadVideoActivity extends Activity implements GooglePlayServicesC
             }
         });
 
+        findViewById(R.id.nextButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(UploadVideoActivity.this, EditDataActivity.class);
+                startActivity(intent);
+            }
+        });
 
         mPlusClient = new PlusClient.Builder(this, this, this)
                 .setVisibleActivities("http://schemas.google.com/AddActivity")
