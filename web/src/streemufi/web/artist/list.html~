@@ -90,12 +90,12 @@
 
       </div>
       
-      <!--div class="col-lg-8 row top-buffer" id="about">
+      <div class="col-lg-8 row top-buffer" id="about">
       	<h3>About</h3>
       	<p>Greatest contacts in the world!</p>
       	<p>Github</p>
       	<p>Google Play</p>
-      </div-->
+      </div>
       
       <footer>
         <hr>
