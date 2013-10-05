@@ -16,6 +16,15 @@ xmlhttp.onreadystatechange=function()
     console.log(xmlhttp.responseText);
     }
 }
-xmlhttp.open("GET", "http://127.0.0.1:1337", true);
-xmlhttp.send();
+xmlhttp.open("POST", "http://127.0.0.1:61555", true);
+console.log(JSON.stringify(newUserCreateRequest))
+xmlhttp.send(JSON.stringify(newUserCreateRequest));
 }
+
+var newUserCreateRequest = {
+    name : 'Aravinth',
+    contact: '017631173663',
+    location  : 'Warschauerstr',
+    text : 'Im a Guitarist',
+    video : 'youtube.com/aravinth123'
+};

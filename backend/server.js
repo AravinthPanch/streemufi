@@ -1,28 +1,24 @@
-var results
-
 var http = require('http');
+var dal = require('./dal')
+
 http.createServer(function (req, res) {
-  res.writeHead(200, {'Content-Type': 'text/plain' }); 	     
-  res.end('Connected to NodeJS\n' + db());
+    res.writeHead(200, {'Content-Type': 'text/plain', 'Access-Control-Allow-Origin' : '*'});
+
+    if (req.method == 'POST') {
+        var body = '';
+        req.on('data', function (data) {
+            body += data;
+        });
+        req.on('end', function () {
+            body = JSON.parse(body);
+            res.end('POST: ' + dal.setData(body));
+        });
+    }
+    else{
+        res.end('GET:')
+    }
+
 }).listen(61555, '127.0.0.1');
+
 console.log('Server running at http://127.0.0.1:61555/');
 
-function db() {
-var mysql      = require('mysql');
-var connection = mysql.createConnection({ 
-  host     : 'localhost',
-  user 		: 'streemuf',
-  password : 'yivGealebeagg',
-  database	: 'streemuf'
-});
-
-connection.connect(function(err) {
-	console.log('connected')
-});
-
-connection.query('select * from user', function(err, result) {  	
-	results = result[0].name
-});
-return results;
-connection.end();
-}
