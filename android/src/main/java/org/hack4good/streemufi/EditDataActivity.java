@@ -10,7 +10,7 @@ public class EditDataActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        setTitle("Enter Artist");
+        setTitle("Step 3 Artist-Data");
     }
 
     @Override

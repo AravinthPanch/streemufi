@@ -32,7 +32,7 @@ public class RecordVideoActivity extends Activity {
         findViewById(R.id.nextButton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(RecordVideoActivity.this, EditDataActivity.class);
+                Intent intent = new Intent(RecordVideoActivity.this, UploadVideoActivity.class);
                 startActivity(intent);
             }
         });
@@ -41,10 +41,17 @@ public class RecordVideoActivity extends Activity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        Uri data1 = data.getData();
-        VideoView view= (VideoView) findViewById(R.id.videoView);
-        view.setVideoURI(data1);
-        view.start();
+
+        if (data==null) { // no data - no processing
+            return;
+        }
+
+        if (requestCode==ACTION_TAKE_VIDEO)  {
+            Uri data1 = data.getData();
+            VideoView view= (VideoView) findViewById(R.id.videoView);
+            view.setVideoURI(data1);
+            view.start();
+        }
     }
 
     @Override
