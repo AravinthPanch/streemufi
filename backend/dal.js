@@ -82,8 +82,8 @@ function getArtist(param,callback){
 exports.postData = function(request, callback){
 
     startConnection();
-    //insertQuery('artist',request, callback)
-    getAllArtist(callback)
+    insertQuery('artist',request, callback)
+    //getAllArtist(callback)
     stopConnection();
 
     
