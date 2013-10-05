@@ -6,7 +6,6 @@ use watoki\curir\controller\Module;
 use watoki\curir\Path;
 use watoki\curir\router\RedirectRouter;
 use watoki\curir\Router;
-use watoki\curir\router\StaticRouter;
 
 class FreemufiModule extends Module {
 
@@ -14,8 +13,7 @@ class FreemufiModule extends Module {
 
     protected function createRouters() {
         return new Liste(array(
-            new RedirectRouter(Path::parse(''), 'artists'),
-            new StaticRouter(Path::parse('artists'), artist\ListComponent::$CLASS),
+            new RedirectRouter(Path::parse(''), 'artist/list.html'),
         ));
     }
 }
