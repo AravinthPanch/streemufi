@@ -13,7 +13,7 @@ class StreemufiModule extends Module {
 
     protected function createRouters() {
         return new Liste(array(
-            new RedirectRouter(Path::parse(''), 'artist/list.html'),
+            new RedirectRouter(Path::parse(''), 'artists'),
         ));
     }
 }
