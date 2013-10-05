@@ -9,3 +9,7 @@ body {
 footer {
 	padding: 30px 0;	
 }
+
+/** handmade **/
+
+.top-buffer { margin-top:100px;}
