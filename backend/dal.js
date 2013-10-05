@@ -7,9 +7,10 @@ var results = {};
 
 function startConnection(){
     connection = mysql.createConnection({
-        user     : 'root',
-        password : '',
-        database	: 'test'
+        host     : 'localhost',
+        user      : 'streemuf',
+        password : 'yivGealebeagg',
+        database  : 'streemuf'
     });
 
     connection.connect(function(err) {
@@ -52,7 +53,7 @@ function getAllArtist(callback){
             response = {
                 count : result.length,
                 artists : result
-            };            
+            };
             callback.end(JSON.stringify(response))
         }
         else {
