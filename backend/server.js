@@ -11,7 +11,9 @@ http.createServer(function (req, res) {
         });
         req.on('end', function () {
             body = JSON.parse(body);
-            dal.postData(body, res)
+            res.end('POST:'
+                + body)
+            //dal.postData(body, res)
         });
     }
     else{
