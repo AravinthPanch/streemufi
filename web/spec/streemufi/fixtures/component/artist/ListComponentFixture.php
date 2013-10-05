@@ -17,7 +17,20 @@ class ListComponentFixture extends ComponentFixture {
         $this->spec->assertCount($int, $this->getField("artist"));
     }
 
+    public function thenArtist_ShouldHaveTheName($int, $string) {
+        $this->spec->assertEquals($string, $this->getFieldOfArtist($int, 'name'));
+    }
+
+    public function thenArtist_ShouldHaveTheVanityUrl($int, $string) {
+        $this->spec->assertEquals($string, $this->getFieldOfArtist($int, 'url/href'));
+    }
+
     protected function getComponentClass() {
         return ListComponent::$CLASS;
+    }
+
+    private function getFieldOfArtist($int, $field) {
+        $int--;
+        return $this->getField("artist/$int/$field");
     }
 }
