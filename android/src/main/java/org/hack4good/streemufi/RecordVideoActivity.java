@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.View;
 import android.widget.VideoView;
 
@@ -47,6 +48,7 @@ public class RecordVideoActivity extends Activity {
 
         if (requestCode==ACTION_TAKE_VIDEO)  {
             Uri data1 = data.getData();
+            Log.i("","datauri" + data1);
             VideoView view= (VideoView) findViewById(R.id.videoView);
             view.setVideoURI(data1);
             view.start();

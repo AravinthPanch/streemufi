@@ -1,0 +1,28 @@
+{
+    "name": "panch-aravinth/streemufi",
+    "description": "Street Music Finder | web app",
+    "authors": [
+        {
+            "name": "Nikolas Martens",
+            "email": "Nikolas.M@rtens.org"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.8",
+        "watoki/tempan": "*",
+        "watoki/factory": "*",
+        "watoki/curir": "*"
+    },
+    "require-dev": {
+        "rtens/mockster": "2.*",
+        "watoki/scrut": "*",
+        "phpunit/phpunit": "3.7.*"
+    },
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-0": {
+            "streemufi": "src/",
+            "spec\\streemufi": ""
+        }
+    }
+}

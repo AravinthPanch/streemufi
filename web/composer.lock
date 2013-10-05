@@ -1,0 +1,863 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
+    ],
+    "hash": "d75ca1e42bffbc4e6fa156c9afca3b3a",
+    "packages": [
+        {
+            "name": "nikic/php-parser",
+            "version": "v0.9.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nikic/PHP-Parser.git",
+                "reference": "1e5e280ae88a27effa2ae4aa2bd088494ed8594f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/1e5e280ae88a27effa2ae4aa2bd088494ed8594f",
+                "reference": "1e5e280ae88a27effa2ae4aa2bd088494ed8594f",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.9-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "PHPParser": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Nikita Popov"
+                }
+            ],
+            "description": "A PHP parser written in PHP",
+            "keywords": [
+                "parser",
+                "php"
+            ],
+            "time": "2013-08-25 17:11:40"
+        },
+        {
+            "name": "watoki/collections",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/watoki/collections.git",
+                "reference": "730ee35376031d3d022761a05db81be5d0e51a15"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/watoki/collections/zipball/730ee35376031d3d022761a05db81be5d0e51a15",
+                "reference": "730ee35376031d3d022761a05db81be5d0e51a15",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2",
+                "watoki/smokey": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "spec\\watoki\\collections": "",
+                    "watoki\\collections": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nikolas Martens",
+                    "email": "Nikolas.M@rtens.org",
+                    "homepage": "http://rtens.org"
+                }
+            ],
+            "description": "Array wrapper for more structured collections for PHP",
+            "homepage": "http://github.com/watoki/collections",
+            "keywords": [
+                "collection",
+                "data structure",
+                "watoki"
+            ],
+            "time": "2013-04-19 09:47:59"
+        },
+        {
+            "name": "watoki/curir",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/watoki/curir.git",
+                "reference": "5e6e8c98c8e11ee6ce243a7a69535274990400fd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/watoki/curir/zipball/5e6e8c98c8e11ee6ce243a7a69535274990400fd",
+                "reference": "5e6e8c98c8e11ee6ce243a7a69535274990400fd",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.8",
+                "watoki/collections": "*",
+                "watoki/dom": "*",
+                "watoki/factory": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "watoki\\curir": "src/",
+                    "spec\\watoki\\curir": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nikolas Martens",
+                    "email": "Nikolas.M@rtens.org",
+                    "homepage": "http://rtens.org"
+                }
+            ],
+            "description": "Modular web delivery system for PHP applications",
+            "homepage": "http://github.com/watoki/curir",
+            "keywords": [
+                "controller",
+                "modular",
+                "mvc",
+                "watoki"
+            ],
+            "time": "2013-08-28 09:40:12"
+        },
+        {
+            "name": "watoki/dom",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/watoki/dom.git",
+                "reference": "3a45110ea6def05eb0a32e4c6f603e58346e5cd9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/watoki/dom/zipball/3a45110ea6def05eb0a32e4c6f603e58346e5cd9",
+                "reference": "3a45110ea6def05eb0a32e4c6f603e58346e5cd9",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.8",
+                "watoki/collections": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "watoki\\dom": "src/",
+                    "spec\\watoki\\dom": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nikolas Martens",
+                    "email": "Nikolas.M@rtens.org",
+                    "homepage": "http://rtens.org"
+                }
+            ],
+            "description": "A minimal (X)HTML/XML parser for PHP",
+            "homepage": "http://github.com/watoki/dom",
+            "keywords": [
+                "parser",
+                "watoki"
+            ],
+            "time": "2013-04-20 08:50:09"
+        },
+        {
+            "name": "watoki/factory",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/watoki/factory.git",
+                "reference": "1feb6a35e2d3f5c022ac0ea7abc5eaea6cbabcc5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/watoki/factory/zipball/1feb6a35e2d3f5c022ac0ea7abc5eaea6cbabcc5",
+                "reference": "1feb6a35e2d3f5c022ac0ea7abc5eaea6cbabcc5",
+                "shasum": ""
+            },
+            "require": {
+                "nikic/php-parser": "0.9.4",
+                "php": ">=5.3.8"
+            },
+            "require-dev": {
+                "watoki/scrut": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "watoki\\factory": "src/",
+                    "spec\\watoki\\factory": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nikolas Martens",
+                    "email": "Nikolas.M@rtens.org",
+                    "homepage": "http://rtens.org"
+                }
+            ],
+            "description": "A simple dependency injection container for PHP",
+            "homepage": "http://github.com/watoki/factory",
+            "keywords": [
+                "dependency injection",
+                "watoki"
+            ],
+            "time": "2013-10-05 07:41:09"
+        },
+        {
+            "name": "watoki/smokey",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/watoki/smokey.git",
+                "reference": "ea146faf54720b74df22a2602500420b6cc844fb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/watoki/smokey/zipball/ea146faf54720b74df22a2602500420b6cc844fb",
+                "reference": "ea146faf54720b74df22a2602500420b6cc844fb",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "spec\\watoki\\smokey": "",
+                    "watoki\\smokey": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nikolas Martens",
+                    "email": "Nikolas.M@rtens.org",
+                    "homepage": "http://rtens.org"
+                }
+            ],
+            "description": "Simple runtime event dispatcher for PHP",
+            "homepage": "http://github.com/watoki/smokey",
+            "keywords": [
+                "event",
+                "event dispatcher",
+                "watoki"
+            ],
+            "time": "2013-03-05 08:49:27"
+        },
+        {
+            "name": "watoki/tempan",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/watoki/tempan.git",
+                "reference": "2f549eb20cabdb8e59f50f2c019bc2acd3e012fe"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/watoki/tempan/zipball/2f549eb20cabdb8e59f50f2c019bc2acd3e012fe",
+                "reference": "2f549eb20cabdb8e59f50f2c019bc2acd3e012fe",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.8",
+                "watoki/collections": "*",
+                "watoki/dom": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "watoki\\tempan": "src/",
+                    "spec\\watoki\\tempan": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nikolas Martens",
+                    "email": "Nikolas.M@rtens.org",
+                    "homepage": "http://rtens.org"
+                }
+            ],
+            "description": "Template animation engine using annotated HTML for PHP",
+            "homepage": "http://github.com/watoki/tempan",
+            "keywords": [
+                "rdfa",
+                "template",
+                "template animation",
+                "watoki"
+            ],
+            "time": "2013-04-24 10:11:06"
+        }
+    ],
+    "packages-dev": [
+        {
+            "name": "phpunit/php-code-coverage",
+            "version": "1.2.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
+                "reference": "466e7cd2554b4e264c9e3f31216d25ac0e5f3d94"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/466e7cd2554b4e264c9e3f31216d25ac0e5f3d94",
+                "reference": "466e7cd2554b4e264c9e3f31216d25ac0e5f3d94",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3",
+                "phpunit/php-file-iterator": ">=1.3.0@stable",
+                "phpunit/php-text-template": ">=1.1.1@stable",
+                "phpunit/php-token-stream": ">=1.1.3@stable"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "3.7.*@dev"
+            },
+            "suggest": {
+                "ext-dom": "*",
+                "ext-xdebug": ">=2.0.5"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.2.x-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "PHP/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "include-path": [
+                ""
+            ],
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian Bergmann",
+                    "email": "sb@sebastian-bergmann.de",
+                    "role": "lead"
+                }
+            ],
+            "description": "Library that provides collection, processing, and rendering functionality for PHP code coverage information.",
+            "homepage": "https://github.com/sebastianbergmann/php-code-coverage",
+            "keywords": [
+                "coverage",
+                "testing",
+                "xunit"
+            ],
+            "time": "2013-09-10 08:14:32"
+        },
+        {
+            "name": "phpunit/php-file-iterator",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sebastianbergmann/php-file-iterator.git",
+                "reference": "2deb24c65ea78e126daa8d45b2089ddc29ec1d26"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-file-iterator/zipball/2deb24c65ea78e126daa8d45b2089ddc29ec1d26",
+                "reference": "2deb24c65ea78e126daa8d45b2089ddc29ec1d26",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "File/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "include-path": [
+                ""
+            ],
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian Bergmann",
+                    "email": "sb@sebastian-bergmann.de",
+                    "role": "lead"
+                }
+            ],
+            "description": "FilterIterator implementation that filters files based on a list of suffixes.",
+            "homepage": "https://github.com/sebastianbergmann/php-file-iterator/",
+            "keywords": [
+                "filesystem",
+                "iterator"
+            ],
+            "time": "2013-01-07 10:47:05"
+        },
+        {
+            "name": "phpunit/php-text-template",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sebastianbergmann/php-text-template.git",
+                "reference": "1eeef106193d2f8c539728e566bb4793071a9e18"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-text-template/zipball/1eeef106193d2f8c539728e566bb4793071a9e18",
+                "reference": "1eeef106193d2f8c539728e566bb4793071a9e18",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "Text/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "include-path": [
+                ""
+            ],
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian Bergmann",
+                    "email": "sb@sebastian-bergmann.de",
+                    "role": "lead"
+                }
+            ],
+            "description": "Simple template engine.",
+            "homepage": "https://github.com/sebastianbergmann/php-text-template/",
+            "keywords": [
+                "template"
+            ],
+            "time": "2013-01-07 10:56:17"
+        },
+        {
+            "name": "phpunit/php-timer",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sebastianbergmann/php-timer.git",
+                "reference": "19689d4354b295ee3d8c54b4f42c3efb69cbc17c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-timer/zipball/19689d4354b295ee3d8c54b4f42c3efb69cbc17c",
+                "reference": "19689d4354b295ee3d8c54b4f42c3efb69cbc17c",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "PHP/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "include-path": [
+                ""
+            ],
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian Bergmann",
+                    "email": "sb@sebastian-bergmann.de",
+                    "role": "lead"
+                }
+            ],
+            "description": "Utility class for timing",
+            "homepage": "https://github.com/sebastianbergmann/php-timer/",
+            "keywords": [
+                "timer"
+            ],
+            "time": "2013-08-02 07:42:54"
+        },
+        {
+            "name": "phpunit/php-token-stream",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sebastianbergmann/php-token-stream.git",
+                "reference": "5220af2a7929aa35cf663d97c89ad3d50cf5fa3e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-token-stream/zipball/5220af2a7929aa35cf663d97c89ad3d50cf5fa3e",
+                "reference": "5220af2a7929aa35cf663d97c89ad3d50cf5fa3e",
+                "shasum": ""
+            },
+            "require": {
+                "ext-tokenizer": "*",
+                "php": ">=5.3.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.2-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "PHP/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "include-path": [
+                ""
+            ],
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian Bergmann",
+                    "email": "sb@sebastian-bergmann.de",
+                    "role": "lead"
+                }
+            ],
+            "description": "Wrapper around PHP's tokenizer extension.",
+            "homepage": "https://github.com/sebastianbergmann/php-token-stream/",
+            "keywords": [
+                "tokenizer"
+            ],
+            "time": "2013-09-13 04:58:23"
+        },
+        {
+            "name": "phpunit/phpunit",
+            "version": "3.7.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sebastianbergmann/phpunit.git",
+                "reference": "4b024e753e3421837afbcca962c8724c58b39376"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/4b024e753e3421837afbcca962c8724c58b39376",
+                "reference": "4b024e753e3421837afbcca962c8724c58b39376",
+                "shasum": ""
+            },
+            "require": {
+                "ext-dom": "*",
+                "ext-pcre": "*",
+                "ext-reflection": "*",
+                "ext-spl": "*",
+                "php": ">=5.3.3",
+                "phpunit/php-code-coverage": "~1.2.1",
+                "phpunit/php-file-iterator": ">=1.3.1",
+                "phpunit/php-text-template": ">=1.1.1",
+                "phpunit/php-timer": ">=1.0.4",
+                "phpunit/phpunit-mock-objects": "~1.2.0",
+                "symfony/yaml": "~2.0"
+            },
+            "require-dev": {
+                "pear-pear/pear": "1.9.4"
+            },
+            "suggest": {
+                "ext-json": "*",
+                "ext-simplexml": "*",
+                "ext-tokenizer": "*",
+                "phpunit/php-invoker": ">=1.1.0,<1.2.0"
+            },
+            "bin": [
+                "composer/bin/phpunit"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.7.x-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "PHPUnit/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "include-path": [
+                "",
+                "../../symfony/yaml/"
+            ],
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian Bergmann",
+                    "email": "sebastian@phpunit.de",
+                    "role": "lead"
+                }
+            ],
+            "description": "The PHP Unit Testing framework.",
+            "homepage": "http://www.phpunit.de/",
+            "keywords": [
+                "phpunit",
+                "testing",
+                "xunit"
+            ],
+            "time": "2013-09-16 03:09:52"
+        },
+        {
+            "name": "phpunit/phpunit-mock-objects",
+            "version": "1.2.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sebastianbergmann/phpunit-mock-objects.git",
+                "reference": "3e40f3b3f18c044a24688fe406440d7fd537744a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/3e40f3b3f18c044a24688fe406440d7fd537744a",
+                "reference": "3e40f3b3f18c044a24688fe406440d7fd537744a",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3",
+                "phpunit/php-text-template": ">=1.1.1@stable"
+            },
+            "require-dev": {
+                "pear-pear/pear": "1.9.4",
+                "phpunit/phpunit": "3.7.*@dev"
+            },
+            "suggest": {
+                "ext-soap": "*"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.2.x-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "PHPUnit/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "include-path": [
+                ""
+            ],
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian Bergmann",
+                    "email": "sb@sebastian-bergmann.de",
+                    "role": "lead"
+                }
+            ],
+            "description": "Mock Object library for PHPUnit",
+            "homepage": "https://github.com/sebastianbergmann/phpunit-mock-objects/",
+            "keywords": [
+                "mock",
+                "xunit"
+            ],
+            "time": "2013-07-23 04:42:59"
+        },
+        {
+            "name": "rtens/mockster",
+            "version": "2.1.0-beta",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rtens/mockster.git",
+                "reference": "f390d9133062de05f4b36ebc1a0f70edd15c04dc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/rtens/mockster/zipball/f390d9133062de05f4b36ebc1a0f70edd15c04dc",
+                "reference": "f390d9133062de05f4b36ebc1a0f70edd15c04dc",
+                "shasum": ""
+            },
+            "require": {
+                "nikic/php-parser": "0.9.4",
+                "php": ">=5.3.2",
+                "watoki/factory": "*"
+            },
+            "require-dev": {
+                "watoki/scrut": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "rtens\\mockster": "src/",
+                    "spec\\rtens\\mockster": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nikolas Martens",
+                    "email": "Nikolas.M@rtens.org",
+                    "homepage": "http://rtens.org"
+                }
+            ],
+            "description": "PHP Mocking framework",
+            "homepage": "http://github.com/rtens/mockster",
+            "keywords": [
+                "BDD",
+                "mock",
+                "mocking",
+                "unit testing"
+            ],
+            "time": "2013-09-25 15:06:13"
+        },
+        {
+            "name": "symfony/yaml",
+            "version": "dev-master",
+            "target-dir": "Symfony/Component/Yaml",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/Yaml.git",
+                "reference": "ef4878bcca171ebe7466be0505b85a710818d788"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/Yaml/zipball/ef4878bcca171ebe7466be0505b85a710818d788",
+                "reference": "ef4878bcca171ebe7466be0505b85a710818d788",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.4-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Symfony\\Component\\Yaml\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "http://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Yaml Component",
+            "homepage": "http://symfony.com",
+            "time": "2013-09-22 18:04:51"
+        },
+        {
+            "name": "watoki/scrut",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/watoki/scrut.git",
+                "reference": "98e1ae2f4c991d29328022d80e7c3f03a8acf552"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/watoki/scrut/zipball/98e1ae2f4c991d29328022d80e7c3f03a8acf552",
+                "reference": "98e1ae2f4c991d29328022d80e7c3f03a8acf552",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.8",
+                "phpunit/phpunit": "3.7.*",
+                "watoki/factory": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "watoki\\scrut": "src/",
+                    "spec\\watoki\\scrut": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nikolas Martens",
+                    "email": "Nikolas.M@rtens.org",
+                    "homepage": "http://rtens.org"
+                }
+            ],
+            "description": "Live documentation web application for PHP.",
+            "homepage": "http://github.com/watoki/scrut",
+            "keywords": [
+                "SbE",
+                "living documentation",
+                "test",
+                "watoki"
+            ],
+            "time": "2013-09-15 14:34:30"
+        }
+    ],
+    "aliases": [
+
+    ],
+    "minimum-stability": "dev",
+    "stability-flags": [
+
+    ],
+    "platform": {
+        "php": ">=5.3.8"
+    },
+    "platform-dev": [
+
+    ]
+}
