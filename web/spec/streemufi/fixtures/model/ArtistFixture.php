@@ -23,7 +23,8 @@ class ArtistFixture extends Fixture {
         $this->artists[] = array(
             'name' => $name,
             'key' => $key,
-            'vanityUrl' => 'streemufi.com/artist/'  . $key
+            'vanityUrl' => 'streemufi.com/artist/'  . $key,
+            'location' => null
         );
         $this->store->__mock()->method('readAll')->willReturn($this->artists);
     }
