@@ -13,3 +13,22 @@ footer {
 /** handmade **/
 
 .top-buffer { margin-top:100px;}
+
+.big-buffer {margin-top: 150px;}
+
+/** video embedding http://www.elmastudio.de/programmierung/css/css-tipp-eingebettete-videos-fur-responsive-webdesigns-optimieren/ **/
+.elastic-video {
+	position: relative;
+	padding-bottom: 55%;
+	padding-top: 15px;
+	height: 0;
+	overflow: hidden;
+	z-index: -1;
+}
+.elastic-video iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
