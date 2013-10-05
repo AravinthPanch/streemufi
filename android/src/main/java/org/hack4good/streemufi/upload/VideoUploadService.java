@@ -1,6 +1,6 @@
 package org.hack4good.streemufi.upload;
 
-public interface UploadService {
+public interface VideoUploadService {
 
     /**
      * @return the URL for the Video

@@ -1,6 +1,6 @@
 package org.hack4good.streemufi.upload;
 
-public class MockUploadService implements UploadService {
+public class MockVideoUploadService implements VideoUploadService {
 
     /**
      * @return the URL for the Video
