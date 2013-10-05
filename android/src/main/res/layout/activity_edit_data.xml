@@ -22,15 +22,17 @@
             android:text="Artist username" />
 
         <EditText
+            android:id="@+id/name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Phone" />
+            android:text="Contact" />
 
         <EditText
+            android:id="@+id/contact"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
@@ -42,6 +44,7 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:id="@+id/notes"
             android:minLines="4" />
 
     </LinearLayout>
