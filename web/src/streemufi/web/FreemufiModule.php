@@ -4,8 +4,8 @@ namespace streemufi\web;
 use watoki\collections\Liste;
 use watoki\curir\controller\Module;
 use watoki\curir\Path;
-use watoki\curir\Router;
 use watoki\curir\router\RedirectRouter;
+use watoki\curir\Router;
 use watoki\curir\router\StaticRouter;
 
 class FreemufiModule extends Module {
@@ -15,8 +15,7 @@ class FreemufiModule extends Module {
     protected function createRouters() {
         return new Liste(array(
             new RedirectRouter(Path::parse(''), 'artists'),
-            new StaticRouter(Path::parse('artists'), ArtistListComponent::$CLASS),
+            new StaticRouter(Path::parse('artists'), artist\ListComponent::$CLASS),
         ));
     }
-
-} 
+}
