@@ -25,8 +25,12 @@ class ArtistStore {
      * @return array
      */
     public function readAll() {
-        $request = $this->client->get('artists');
-        $response = json_decode($request->send()->getBody()->__toString(), true);
-        return $response['artists'];
+        try {
+            $request = $this->client->get('artists');
+            $response = json_decode($request->send()->getBody()->__toString(), true);
+            return $response['artists'];
+        } catch (\Exception $e) {
+            return array();
+        }
     }
 }

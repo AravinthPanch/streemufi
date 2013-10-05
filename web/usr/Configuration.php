@@ -6,7 +6,7 @@ use watoki\factory\Factory;
 class Configuration extends \streemufi\Configuration {
 
     public function getApiUrl() {
-        return 'http://localhost/streemufi';
+        return 'http://localhost/streemuf';
     }
 
 }

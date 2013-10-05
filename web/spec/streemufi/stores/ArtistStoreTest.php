@@ -30,4 +30,10 @@ class ArtistStoreTest extends Specification {
         $this->store->thenArtist_ShouldHaveThe_(1, 'url', 'localhost/artist/Bart');
     }
 
+    function testCatchException() {
+        $this->store->givenTheRequestThrowsAnException();
+        $this->store->whenIReadAllArtists();
+        $this->store->thenTheListOfArtistShouldHaveTheSize(0);
+    }
+
 }

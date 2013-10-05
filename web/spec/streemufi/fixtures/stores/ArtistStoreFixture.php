@@ -26,6 +26,7 @@ class ArtistStoreFixture extends Fixture {
         $request->__mock()->method('send')->willReturn($this->response);
 
         $this->client = $client;
+        $this->request = $request;
     }
 
     public function whenIReadAllArtists() {
@@ -50,5 +51,9 @@ class ArtistStoreFixture extends Fixture {
 
     public function thenArtist_ShouldHaveThe_($int, $field, $string) {
         $this->spec->assertEquals($string, $this->all[$int - 1][$field]);
+    }
+
+    public function givenTheRequestThrowsAnException() {
+        $this->request->__mock()->method('send')->willThrow(new \Exception());
     }
 }
