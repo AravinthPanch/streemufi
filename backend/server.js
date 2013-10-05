@@ -10,8 +10,10 @@ console.log('Server running at http://127.0.0.1:61555/');
 function db() {
 var mysql      = require('mysql');
 var connection = mysql.createConnection({ 
-  user     : 'localhost',
-  password : 'yivGealebeagg'   
+  host     : 'localhost',
+  user 		: 'streemuf',
+  password : 'yivGealebeagg',
+  database	: 'streemuf'
 });
 
 connection.connect(function(err) {
@@ -19,7 +21,7 @@ connection.connect(function(err) {
 });
 
 connection.query('select * from user', function(err, result) {  	
-	results = result[0].username
+	results = result[0].name
 });
 return results;
 connection.end();
