@@ -26,6 +26,19 @@ public class UploadVideoActivity extends Activity implements GooglePlayServicesC
         setTitle("Step 2 - upload the Video");
         setContentView(R.layout.upload_layout);
 
+        wireButtons();
+
+        mPlusClient = new PlusClient.Builder(this, this, this)
+                .setVisibleActivities("http://schemas.google.com/AddActivity")
+                .build();
+
+        // Progress bar to be displayed if the connection failure is not resolved.
+        mConnectionProgressDialog = new ProgressDialog(this);
+        mConnectionProgressDialog.setMessage("Signing in...");
+
+    }
+
+    private void wireButtons() {
         findViewById(R.id.sign_in_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -40,15 +53,6 @@ public class UploadVideoActivity extends Activity implements GooglePlayServicesC
                 startActivity(intent);
             }
         });
-
-        mPlusClient = new PlusClient.Builder(this, this, this)
-                .setVisibleActivities("http://schemas.google.com/AddActivity")
-                .build();
-
-        // Progress bar to be displayed if the connection failure is not resolved.
-        mConnectionProgressDialog = new ProgressDialog(this);
-        mConnectionProgressDialog.setMessage("Signing in...");
-
     }
 
     private void reactOnSignInClick() {
