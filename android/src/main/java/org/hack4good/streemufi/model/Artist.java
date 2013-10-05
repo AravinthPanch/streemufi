@@ -2,8 +2,28 @@ package org.hack4good.streemufi.model;
 
 public class Artist {
     public String name;
-    public String videoURL;
-    public String telephoneNumber;
-    public String freeText;
+    public String url;
+    public String contact;
+    public String text;
+
+
+    public String toJSONString() {
+        StringBuilder builder=new StringBuilder();
+        builder.append("{ ");
+        builder.append(getJSONKeyValuePair("name",name));
+        builder.append(",");
+        builder.append(getJSONKeyValuePair("url",url));
+        builder.append(",");
+        builder.append(getJSONKeyValuePair("contact",contact));
+        builder.append(",");
+        builder.append(getJSONKeyValuePair("text",text));
+        builder.append("}");
+
+        return builder.toString();
+    }
+
+    private String getJSONKeyValuePair(String key,String value) {
+        return key + " : '" + value +"'";
+    }
 
 }
