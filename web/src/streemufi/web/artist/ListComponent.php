@@ -8,7 +8,9 @@ class ListComponent extends Component {
     static $CLASS = __CLASS__;
 
     public function doGet() {
-        return array();
+        return array(
+            'artist' => array()
+        );
     }
 
 }
