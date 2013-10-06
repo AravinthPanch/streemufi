@@ -10,5 +10,9 @@ unset($_REQUEST['_']);
 $request = $_REQUEST['-'];
 unset($_REQUEST['-']);
 
-$app = new WebApplication($route, StreemufiModule::$CLASS, $factory);
-$app->handleRequest($request);
+try {
+    $app = new WebApplication($route, StreemufiModule::$CLASS, $factory);
+    $app->handleRequest($request);
+} catch (Exception $e) {
+    echo "Something went wrong. Sorry. <!-- " . $e;
+}
