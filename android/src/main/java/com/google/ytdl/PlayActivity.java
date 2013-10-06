@@ -24,7 +24,9 @@ import com.google.api.client.json.gson.GsonFactory;
 import com.google.ytdl.util.ImageFetcher;
 import com.google.ytdl.util.VideoData;
 
+import org.hack4good.streemufi.App;
 import org.hack4good.streemufi.R;
+import org.hack4good.streemufi.RecordVideoActivity;
 
 /*
  * Copyright (c) 2013 Google Inc.
@@ -178,10 +180,23 @@ public class PlayActivity extends Activity implements
 			setTitle(R.string.playing_uploaded_video);
 		}
 		String youtubeId = intent.getStringExtra(MainActivity.YOUTUBE_ID);
-		panToVideo(youtubeId);
+		//panToVideo(youtubeId);
+
+        App.actArtist.url="http://www.youtube.com/watch?v="+youtubeId;
+        startActivity(new Intent(this, RecordVideoActivity.class));
+        finish();
 	}
 
-	@Override
+    @Override
+    protected void onResume() {
+        super.onResume();
+        String youtubeId = intent.getStringExtra(MainActivity.YOUTUBE_ID);
+        App.actArtist.url="http://www.youtube.com/watch?v="+youtubeId;
+        startActivity(new Intent(this, RecordVideoActivity.class));
+        finish();
+    }
+
+    @Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.play, menu);
