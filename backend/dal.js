@@ -56,7 +56,7 @@ function uniqueIdGenerator(){
 
 function insertQuery(table, param, callback){
     var UID = uniqueIdGenerator()
-    var key = param.name + UID
+    var key = param.name.toLowerCase() + UID
 
     var query = 'INSERT INTO ' + table + '(id, name, contact, location, text, video, keyUrl)' + " VALUES ('" + UID  + "' , '" +
         param.name + "' , '" + param.contact + "' , '" + param.location + "' , '" + param.text + "' , '" + param.video +
