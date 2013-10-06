@@ -56,19 +56,22 @@ function uniqueIdGenerator(){
 
 function insertQuery(table, param, callback){
     var UID = uniqueIdGenerator()
-    var url = param.name + UID
+    var key = param.name + UID
 
-    var query = 'INSERT INTO ' + table + '(id, name, contact, location, text, video, url)' + " VALUES ('" + UID  + "' , '" +
+    var query = 'INSERT INTO ' + table + '(id, name, contact, location, text, video, keyUrl)' + " VALUES ('" + UID  + "' , '" +
         param.name + "' , '" + param.contact + "' , '" + param.location + "' , '" + param.text + "' , '" + param.video +
-        "' , '" + url + "')"
+        "' , '" + key + "')"
 
     connection.query(query, function(err, result) {
         try {
-            response = {
-                url : url
+            if(err == null){
+                response = key
+                sendResponse(JSON.stringify(response), 'ok', callback)
+                console.log('SQL INSERT SUCCESS')
+            }else
+            {
+                throw err;
             }
-            sendResponse(JSON.stringify(response), 'ok', callback)
-            console.log('SQL INSERT SUCCESS')
         }
         catch(e){
             console.log('ERROR IN SQL\n' + err)
@@ -81,7 +84,7 @@ function insertQuery(table, param, callback){
 };
 
 function getAllArtists(callback){
-    var query = 'SELECT name, url FROM artist'
+    var query = 'SELECT name, keyUrl as `key` FROM artist'
 
     connection.query(query, function(err, result) {
         try {
@@ -103,7 +106,7 @@ function getAllArtists(callback){
 };
 
 function getArtist(param,callback){
-    var query = "SELECT * FROM artist WHERE url = '" + param + "'"
+    var query = "SELECT name, contact, location, text, video, keyUrl as `key` FROM artist WHERE keyUrl = '" + param + "'"
 
     connection.query(query, function(err, result) {
         try {
