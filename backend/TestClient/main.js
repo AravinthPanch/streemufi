@@ -22,12 +22,16 @@ function loadItem(){
         // xmlhttp.open("GET", "http://localhost:61555/v1/artist/getAllArtists", true);
         // xmlhttp.send();
 
-        // xmlhttp.open("POST", "http://localhost:61555/v1/artist", true);
-        // xmlhttp.send(JSON.stringify(newUserCreateRequest));
+        xmlhttp.open("POST", "http://localhost:61555/v1/artist", true);
+        xmlhttp.send(JSON.stringify(newUserCreateRequest));
     }else
     {
-        xmlhttp.open("POST", "http://api.streemuf.caelum.uberspace.de/", true);
-        xmlhttp.send(JSON.stringify(newUserCreateRequest));
+        // xmlhttp.open("GET", "http://api.streemuf.caelum.uberspace.de/v1/artist/Aravinth22172", true);
+        xmlhttp.open("GET", "http://api.streemuf.caelum.uberspace.de/v1/artist/getAllArtists", true);
+        xmlhttp.send();
+
+        // xmlhttp.open("POST", "http://api.streemuf.caelum.uberspace.de/v1/artist", true);        
+        // xmlhttp.send(JSON.stringify(newUserCreateRequest));
     }
 }
 

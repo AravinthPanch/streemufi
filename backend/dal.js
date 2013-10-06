@@ -135,7 +135,7 @@ exports.postData = function(entity, data, callback){
 exports.getData = function(entity, callback){
     if(entity == 'getAllArtists'){
         startConnection();
-        getAllArtist(callback)
+        getAllArtists(callback)
     }
     else {
         startConnection();
