@@ -12,9 +12,11 @@ public class Artist {
         builder.append("{ ");
         builder.append(getJSONKeyValuePair("name",name));
         builder.append(",");
-        builder.append(getJSONKeyValuePair("url",url));
+        builder.append(getJSONKeyValuePair("video",url));
         builder.append(",");
         builder.append(getJSONKeyValuePair("contact",contact));
+        builder.append(",");
+        builder.append(getJSONKeyValuePair("location","foo"));
         builder.append(",");
         builder.append(getJSONKeyValuePair("text",text));
         builder.append("}");
@@ -23,7 +25,7 @@ public class Artist {
     }
 
     private String getJSONKeyValuePair(String key,String value) {
-        return key + " : '" + value +"'";
+        return "\""+ key + "\"" + " : \"" + value +"\"";
     }
 
 }

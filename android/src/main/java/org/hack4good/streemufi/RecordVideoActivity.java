@@ -27,7 +27,9 @@ public class RecordVideoActivity extends Activity {
 
             @Override
             public void onClick(View v) {
-                Intent takeVideoIntent = new Intent(MediaStore.ACTION_VIDEO_CAPTURE);
+
+                Intent takeVideoIntent = new Intent(RecordVideoActivity.this,com.google.ytdl.MainActivity.class);
+                //Intent takeVideoIntent = new Intent(MediaStore.ACTION_VIDEO_CAPTURE);
                 startActivityForResult(takeVideoIntent, ACTION_TAKE_VIDEO);
             }
         });

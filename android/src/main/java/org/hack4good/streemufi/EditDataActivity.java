@@ -36,9 +36,9 @@ public class EditDataActivity extends Activity {
         EditText contact = (EditText) findViewById(R.id.contact);
         EditText text = (EditText) findViewById(R.id.notes);
 
-        artist.name = name.toString();
-        artist.contact = contact.toString();
-        artist.text = text.toString();
+        artist.name = name.getText().toString();
+        artist.contact = contact.getText().toString();
+        artist.text = text.getText().toString();
     }
 
 }

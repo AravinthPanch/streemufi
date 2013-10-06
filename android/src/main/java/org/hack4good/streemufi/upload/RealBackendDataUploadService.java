@@ -1,5 +1,7 @@
 package org.hack4good.streemufi.upload;
 
+import android.os.AsyncTask;
+
 import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
@@ -15,27 +17,48 @@ import java.io.UnsupportedEncodingException;
 public class RealBackendDataUploadService implements DataUploadService {
 
     @Override
-    public void uploadArtist(Artist artist, SuccessCallback successCallback, FailCallback failCallback) {
-        HttpClient httpclient = new DefaultHttpClient();
-        HttpPost httppost = new HttpPost(Config.BACKEND_URL+"artist");
+    public void uploadArtist(final Artist artist, final SuccessCallback successCallback, final FailCallback failCallback) {
+        new AsyncTask<Void,Void,Void>() {
 
-        try {
-            httppost.setEntity(new StringEntity("your string"));
-            HttpResponse resp = httpclient.execute(httppost);
+            private boolean success=false;
 
-            if (resp.getStatusLine().getStatusCode()==200) {
-                successCallback.onSuccess();
-            } else {
-                failCallback.onFail();
+            @Override
+            protected void onPostExecute(Void aVoid) {
+                super.onPostExecute(aVoid);
+                if (success) {
+                    successCallback.onSuccess();
+                } else {
+                    failCallback.onFail();
+                }
             }
 
-        } catch (UnsupportedEncodingException e) {
-            failCallback.onFail();
-        } catch (ClientProtocolException e) {
-            failCallback.onFail();
-        } catch (IOException e) {
-            failCallback.onFail();
-        }
+
+            @Override
+            protected Void doInBackground(Void... params) {
+
+                HttpClient httpclient = new DefaultHttpClient();
+                HttpPost httppost = new HttpPost(Config.BACKEND_URL+"artist");
+
+                try {
+                    httppost.setEntity(new StringEntity(artist.toJSONString()));
+                    HttpResponse resp = httpclient.execute(httppost);
+
+                    if (resp.getStatusLine().getStatusCode()==200) {
+                        success=true;
+                    }
+
+                } catch (UnsupportedEncodingException e) {
+                    success=false;
+                } catch (ClientProtocolException e) {
+                    success=false;
+                } catch (IOException e) {
+                    success=false;
+                }
+
+                return null;
+            }
+        }.execute();
+
     }
 
 }
