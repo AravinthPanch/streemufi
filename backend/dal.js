@@ -54,11 +54,16 @@ function uniqueIdGenerator(){
     return Math.floor((Math.random()*100000)+1);
 };
 
+function keyUrlGenerator(param){
+    var i = param.replace(" ", "_")
+    return i.toLowerCase();
+};
+
 function insertQuery(table, param, callback){
     var UID = uniqueIdGenerator()
-    var key = param.name.toLowerCase() + UID
+    var key = keyUrlGenerator(param.name) + UID
 
-    var query = 'INSERT INTO ' + table + '(id, name, contact, location, text, video, keyUrl)' + " VALUES ('" + UID  + "' , '" +
+    var query = 'INSERT INTO ' + table + '(name, contact, location, text, video, keyUrl)' + " VALUES ('"
         param.name + "' , '" + param.contact + "' , '" + param.location + "' , '" + param.text + "' , '" + param.video +
         "' , '" + key + "')"
 
