@@ -65,8 +65,8 @@ function insertQuery(table, param, callback){
     connection.query(query, function(err, result) {
         try {
             response = {
-                url : url   
-            }            
+                url : url
+            }
             sendResponse(JSON.stringify(response), 'ok', callback)
             console.log('SQL INSERT SUCCESS')
         }
@@ -133,7 +133,7 @@ exports.postData = function(entity, data, callback){
 };
 
 exports.getData = function(entity, callback){
-    if(entity == 'getAllArtists'){
+    if(entity == 'artists'){
         startConnection();
         getAllArtists(callback)
     }
