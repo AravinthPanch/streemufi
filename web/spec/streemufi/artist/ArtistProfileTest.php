@@ -42,7 +42,12 @@ class ArtistProfileTest extends Specification {
     }
 
     function testUrlAsContact() {
-        $this->markTestIncomplete();
+        $this->artist->givenTheArtist_WithTheKey('El Barto', 'Bart');
+        $this->artist->given_HasThe_('Bart', 'contact', 'http://example.com');
+
+        $this->component->whenIOpenTheProfileOf('Bart');
+
+        $this->component->thenTheContactShouldLinkTo('http://example.com');
     }
 
     function testEmailAsContact() {

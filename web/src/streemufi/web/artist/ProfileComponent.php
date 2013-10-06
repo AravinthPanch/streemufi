@@ -37,7 +37,7 @@ class ProfileComponent extends Component {
             'name' => $artist['name'],
             'text' => $artist['text'],
             'location' => $artist['location'],
-            'contact' => $artist['contact'],
+            'contact' => $this->assembleContact($artist['contact']),
             'video' => array(
                 'url' => array(
                     '_' => $artist['video'],
@@ -56,6 +56,17 @@ class ProfileComponent extends Component {
             );
         }
         return null;
+    }
+
+    private function assembleContact($contact) {
+        if (substr($contact, 0, 4) == 'http') {
+            return array(
+                '_' => $contact,
+                'href' => $contact
+            );
+        } else {
+            return $contact;
+        }
     }
 
 } 

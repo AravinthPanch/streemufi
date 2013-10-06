@@ -26,6 +26,11 @@ class ProfileComponentFixture extends ComponentFixture {
         $this->spec->assertEquals($string, $this->getField('profile/contact'));
     }
 
+    public function thenTheContactShouldLinkTo($string) {
+        $this->spec->assertEquals($string, $this->getField('profile/contact/href'));
+        $this->spec->assertEquals($string, $this->getField('profile/contact/_'));
+    }
+
     public function thenTheVideoUrlShouldBe($string) {
         $this->spec->assertEquals($string, $this->getField('profile/video/url/_'));
         $this->spec->assertEquals($string, $this->getField('profile/video/url/href'));
