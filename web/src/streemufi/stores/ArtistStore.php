@@ -26,11 +26,20 @@ class ArtistStore {
      */
     public function readAll() {
         try {
-            $request = $this->client->get('artists');
-            $response = json_decode($request->send()->getBody()->__toString(), true);
+            $response = $this->get('artists');
             return $response['artists'];
         } catch (\Exception $e) {
             return array();
         }
+    }
+
+    public function readByKey($key) {
+        return $this->get('artist/' . $key);
+    }
+
+    private function get($resource) {
+        $request = $this->client->get($resource);
+        $response = json_decode($request->send()->getBody()->__toString(), true);
+        return $response;
     }
 }
