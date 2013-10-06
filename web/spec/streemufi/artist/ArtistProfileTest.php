@@ -47,11 +47,16 @@ class ArtistProfileTest extends Specification {
 
         $this->component->whenIOpenTheProfileOf('Bart');
 
-        $this->component->thenTheContactShouldLinkTo('http://example.com');
+        $this->component->thenTheContact_ShouldLinkTo('http://example.com', 'http://example.com');
     }
 
     function testEmailAsContact() {
-        $this->markTestIncomplete();
+        $this->artist->givenTheArtist_WithTheKey('El Barto', 'Bart');
+        $this->artist->given_HasThe_('Bart', 'contact', 'bart@simpson.com');
+
+        $this->component->whenIOpenTheProfileOf('Bart');
+
+        $this->component->thenTheContact_ShouldLinkTo('bart@simpson.com', 'mailto:bart@simpson.com');
     }
 
 } 

@@ -64,6 +64,11 @@ class ProfileComponent extends Component {
                 '_' => $contact,
                 'href' => $contact
             );
+        } else if (strpos($contact, '@')) {
+            return array(
+                '_' => $contact,
+                'href' => 'mailto:' . $contact
+            );
         } else {
             return $contact;
         }
