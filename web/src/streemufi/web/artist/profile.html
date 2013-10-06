@@ -57,11 +57,14 @@
     <div class="row">
 
         <div property="video" class="col-lg-8 col-md-8">
-            <div class="elastic-video-wrapper">
+            <div property="embedded" class="elastic-video-wrapper">
                 <div class="elastic-video">
                     <iframe property="embedded" src="https://www.youtube-nocookie.com/embed/mS8eipuXYWg?wmode=opaque" width="610"
                             height="343"></iframe>
                 </div>
+            </div>
+            <div>
+                <a property="url" href="#">http://youtube.com/watch?v=me</a>
             </div>
         </div>
 
@@ -81,8 +84,7 @@
         </div>
         <div class="col-lg-8 col-md-8 small-top-buffer bottom-buffer">
             <hr/>
-            <span class="btn btn-primary btn-lg">Book Artist</span>
-            <span property="contact">+49 151 23456789</span>
+            <a property="contact" class="btn btn-primary btn-lg" href="#">+49 151 2345678</a>
         </div>
     </div>
 </div>

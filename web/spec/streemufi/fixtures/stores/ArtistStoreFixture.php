@@ -12,6 +12,9 @@ class ArtistStoreFixture extends Fixture {
 
     private $all;
 
+    /** @var ArtistStore */
+    private $store;
+
     public function __construct(Specification $spec, Factory $factory) {
         parent::__construct($spec, $factory);
 
@@ -27,12 +30,16 @@ class ArtistStoreFixture extends Fixture {
 
         $this->client = $client;
         $this->request = $request;
+
+        $this->store = $this->spec->factory->getInstance(ArtistStore::$CLASS);
     }
 
     public function whenIReadAllArtists() {
-        /** @var ArtistStore $store */
-        $store = $this->spec->factory->getInstance(ArtistStore::$CLASS);
-        $this->all = $store->readAll();
+        $this->all = $this->store->readAll();
+    }
+
+    public function whenIReadTheArtistWithTheKey($string) {
+        $this->store->readByKey($string);
     }
 
     public function thenTheRequestShould_TheUrl($method, $url) {

@@ -41,9 +41,10 @@ class ProfileComponent extends Component {
             'contact' => $artist['contact'],
             'video' => array(
                 'url' => array(
-                    'value' => $artist['video'],
+                    '_' => $artist['video'],
                     'href' => $artist['video']
-                )
+                ),
+                'embedded' => null
             )
         );
     }

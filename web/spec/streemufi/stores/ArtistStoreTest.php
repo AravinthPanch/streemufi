@@ -9,7 +9,7 @@ use watoki\scrut\Specification;
  */
 class ArtistStoreTest extends Specification {
 
-    function testReadAllRequest() {
+    function testReadAll() {
         $this->store->givenTheResponseIs('{
             "count": 2,
             "artists": [
@@ -34,6 +34,11 @@ class ArtistStoreTest extends Specification {
         $this->store->givenTheRequestThrowsAnException();
         $this->store->whenIReadAllArtists();
         $this->store->thenTheListOfArtistShouldHaveTheSize(0);
+    }
+
+    function testReadByKey() {
+        $this->store->whenIReadTheArtistWithTheKey('MyKey');
+        $this->store->thenTheRequestShould_TheUrl('get', 'artist/MyKey');
     }
 
 }

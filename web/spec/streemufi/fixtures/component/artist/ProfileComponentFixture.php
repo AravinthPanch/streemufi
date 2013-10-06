@@ -27,7 +27,7 @@ class ProfileComponentFixture extends ComponentFixture {
     }
 
     public function thenTheVideoUrlShouldBe($string) {
-        $this->spec->assertEquals($string, $this->getField('profile/video/url/value'));
+        $this->spec->assertEquals($string, $this->getField('profile/video/url/_'));
         $this->spec->assertEquals($string, $this->getField('profile/video/url/href'));
     }
 
