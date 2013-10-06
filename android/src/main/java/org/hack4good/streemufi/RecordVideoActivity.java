@@ -22,6 +22,8 @@ public class RecordVideoActivity extends Activity {
         setContentView(R.layout.record_video);
         setTitle("Step 1 - Record Video");
 
+        urlEditText= (EditText) findViewById(R.id.url);
+
         findViewById(R.id.recButton).setOnClickListener(new View.OnClickListener() {
 
 
@@ -37,6 +39,7 @@ public class RecordVideoActivity extends Activity {
         findViewById(R.id.nextButton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                App.actArtist.url=urlEditText.getText().toString();
                 Intent intent = new Intent(RecordVideoActivity.this, EditDataActivity.class);
                 startActivity(intent);
             }
@@ -52,7 +55,7 @@ public class RecordVideoActivity extends Activity {
             }
         });
 
-        urlEditText= (EditText) findViewById(R.id.url);
+
 
         String textExtra = getIntent().getStringExtra(Intent.EXTRA_TEXT);
         if (textExtra !=null) {

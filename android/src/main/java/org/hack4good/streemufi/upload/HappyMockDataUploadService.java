@@ -5,6 +5,6 @@ import org.hack4good.streemufi.model.Artist;
 public class HappyMockDataUploadService implements DataUploadService {
     @Override
     public void uploadArtist(Artist artist, SuccessCallback successCallback, FailCallback failCallback) {
-        successCallback.onSuccess();
+        successCallback.onSuccess("http://youtube.com");
     }
 }

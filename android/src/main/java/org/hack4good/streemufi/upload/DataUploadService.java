@@ -5,7 +5,7 @@ import org.hack4good.streemufi.model.Artist;
 public interface DataUploadService {
 
     public interface SuccessCallback {
-        public void onSuccess();
+        public void onSuccess(String url);
     }
 
     public interface FailCallback {
