@@ -1,4 +1,11 @@
-// DATA ACCESS LAYER
+/**
+ * Author: Aravinth, S.Panchadcharam
+ * Project: Streemufi
+ * Version: 1.0
+ * Date: 05/10/13
+ * Description: Data Access Layer (dal) consists of configuration of MySQl Connection and processes Request and Response Operations
+ */
+
 var mysql      = require('mysql');
 var connection = {};
 var request = {};
@@ -29,55 +36,89 @@ function stopConnection(){
     });
 };
 
-function insertQuery(table , param, callback){
-    var UUID = Math.floor((Math.random()*100000)+1);
-    var url = param.name + UUID
+function sendResponse(response, status, responder){
+    switch(status){
+        case 'ok' :
+            responder.writeHead(200, {'Content-Type': 'text/plain', 'Access-Control-Allow-Origin' : '*'})
+            responder.end(response)
+            break;
 
-    var query = 'INSERT INTO ' + table + '(id, name, contact, location, text, video, url)' + " VALUES ('" + UUID  + "' , '" +
+        case 'bad' :
+            responder.writeHead(500, {'Content-Type': 'text/plain', 'Access-Control-Allow-Origin' : '*'})
+            responder.end(response)
+            break;
+    }
+};
+
+function uniqueIdGenerator(){
+    return Math.floor((Math.random()*100000)+1);
+};
+
+function insertQuery(table, param, callback){
+    var UID = uniqueIdGenerator()
+    var url = param.name + UID
+
+    var query = 'INSERT INTO ' + table + '(id, name, contact, location, text, video, url)' + " VALUES ('" + UID  + "' , '" +
         param.name + "' , '" + param.contact + "' , '" + param.location + "' , '" + param.text + "' , '" + param.video +
         "' , '" + url + "')"
 
     connection.query(query, function(err, result) {
-        if(err == null) {
+        try {
+            response = {
+                url : url   
+            }            
+            sendResponse(JSON.stringify(response), 'ok', callback)
             console.log('SQL INSERT SUCCESS')
-            callback.end(JSON.stringify(url))
         }
-        else {
+        catch(e){
             console.log('ERROR IN SQL\n' + err)
+            sendResponse(err, 'bad', callback)
+        }
+        finally {
+            stopConnection()
         }
     });
 };
 
-function getAllArtist(callback){
+function getAllArtists(callback){
     var query = 'SELECT name, url FROM artist'
 
     connection.query(query, function(err, result) {
-        if(err == null) {
+        try {
             response = {
                 count : result.length,
                 artists : result
-            };
-            callback.end(JSON.stringify(response))
+            }
+            sendResponse(JSON.stringify(response), 'ok', callback)
+            console.log('SQL getAllArtist')
         }
-        else {
+        catch(e){
             console.log('ERROR IN SQL\n' + err)
+            sendResponse(err, 'bad', callback)
+        }
+        finally {
+            stopConnection()
         }
     });
 };
-
 
 function getArtist(param,callback){
     var query = "SELECT * FROM artist WHERE url = '" + param + "'"
 
     connection.query(query, function(err, result) {
-        if(err == null) {
+        try {
             response = {
                 artist : result[0]
-            };
-            callback.end(JSON.stringify(response))
+            }
+            sendResponse(JSON.stringify(response), 'ok', callback)
+            console.log('SQL getArtist')
         }
-        else {
+        catch(e){
             console.log('ERROR IN SQL\n' + err)
+            sendResponse(err, 'bad', callback)
+        }
+        finally {
+            stopConnection()
         }
     });
 };
@@ -87,23 +128,18 @@ exports.postData = function(entity, data, callback){
         case 'artist' :
             startConnection();
             insertQuery('artist', data, callback)
-            stopConnection();
             break;
     }
 };
 
-exports.getData = function(entity, data, callback){
-    switch(entity){
-        case 'artist' :
-            startConnection();
-            getAllArtist(callback)
-            stopConnection();
-            break;
-        case 'artist' :
-            startConnection();
-            getArtist('Aravinth96624', callback)
-            stopConnection();
-            break;
+exports.getData = function(entity, callback){
+    if(entity == 'getAllArtists'){
+        startConnection();
+        getAllArtists(callback)
+    }
+    else {
+        startConnection();
+        getArtist(entity, callback)
     }
 };
 

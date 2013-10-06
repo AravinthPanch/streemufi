@@ -1,6 +1,6 @@
 {
   "author": "",
-  "name": "Streemufi-backend-server",
+  "name": "Streemufi-API-v1",
   "version": "0.1.0",
   "dependencies": {
   	"mysql" : "2.0.0-alpha9"
