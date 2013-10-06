@@ -10,6 +10,8 @@
 
 /*! normalize.css v2.1.0 | MIT License | git.io/normalize */
 
+@import url(http://fonts.googleapis.com/css?family=Raleway:200,500);
+
 article,
 aside,
 details,
@@ -300,8 +302,9 @@ html {
 }
 
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Raleway", Helvetica, Arial, sans-serif;
   font-size: 14px;
+  font-weight: 500;
   line-height: 1.428571429;
   color: #333333;
   background-color: #ffffff;
@@ -462,8 +465,8 @@ h6,
 .h4,
 .h5,
 .h6 {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 500;
+  font-family: "Raleway", Helvetica, Arial, sans-serif;
+  font-weight: 200;
   line-height: 1.1;
 }
 
@@ -2080,7 +2083,7 @@ fieldset[disabled] .btn-default.active {
 
 .btn-primary {
   color: #ffffff;
-  background-color: #428bca;
+  background-color: #24506f;
   border-color: #357ebd;
 }
 
@@ -4490,8 +4493,8 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 
 .navbar-inverse {
-  background-color: #222222;
-  border-color: #080808;
+  background-color: #a5b3be;
+  border-color: #a5b3be;
 }
 
 .navbar-inverse .navbar-brand {
@@ -4509,7 +4512,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 
 .navbar-inverse .navbar-nav > li > a {
-  color: #999999;
+  color: #ffffff;
 }
 
 .navbar-inverse .navbar-nav > li > a:hover,
@@ -6804,6 +6807,3 @@ td.visible-print {
   }
 }
 
-/* own classes */
-
-.top-buffer { margin-top:100px;}

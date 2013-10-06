@@ -11,7 +11,8 @@
         "php": ">=5.3.8",
         "watoki/tempan": "*",
         "watoki/factory": "*",
-        "watoki/curir": "*"
+        "watoki/curir": "*",
+        "guzzle/guzzle": "3.*"
     },
     "require-dev": {
         "rtens/mockster": "2.*",
