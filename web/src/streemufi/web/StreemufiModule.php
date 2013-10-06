@@ -1,6 +1,8 @@
 <?php
 namespace streemufi\web;
 
+use streemufi\DynamicRouter;
+use streemufi\web\artist\ProfileComponent;
 use watoki\collections\Liste;
 use watoki\curir\controller\Module;
 use watoki\curir\Path;
@@ -14,6 +16,7 @@ class StreemufiModule extends Module {
     protected function createRouters() {
         return new Liste(array(
             new RedirectRouter(Path::parse(''), 'artists'),
+            new DynamicRouter(Path::parse('artist/{key}'), ProfileComponent::$CLASS)
         ));
     }
 }
