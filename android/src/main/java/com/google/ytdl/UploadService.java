@@ -171,7 +171,7 @@ public class UploadService extends IntentService {
 
             videoId = ResumableUpload.upload(youtube, fileInputStream, fileSize, mFileUri, cursor.getString(column_index), getApplicationContext());
             
-     
+
 
 
 

@@ -8,6 +8,7 @@ import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.util.EntityUtils;
 import org.hack4good.streemufi.Config;
 import org.hack4good.streemufi.model.Artist;
 
@@ -21,12 +22,13 @@ public class RealBackendDataUploadService implements DataUploadService {
         new AsyncTask<Void,Void,Void>() {
 
             private boolean success=false;
+            private String result;
 
             @Override
             protected void onPostExecute(Void aVoid) {
                 super.onPostExecute(aVoid);
                 if (success) {
-                    successCallback.onSuccess();
+                    successCallback.onSuccess(result);
                 } else {
                     failCallback.onFail();
                 }
@@ -43,6 +45,7 @@ public class RealBackendDataUploadService implements DataUploadService {
                     httppost.setEntity(new StringEntity(artist.toJSONString()));
                     HttpResponse resp = httpclient.execute(httppost);
 
+                    result=EntityUtils.toString(resp.getEntity());
                     if (resp.getStatusLine().getStatusCode()==200) {
                         success=true;
                     }

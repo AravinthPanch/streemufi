@@ -38,32 +38,6 @@ public class UploadVideoActivity extends Activity implements GooglePlayServicesC
         // Progress bar to be displayed if the connection failure is not resolved.
         mConnectionProgressDialog = new ProgressDialog(this);
         mConnectionProgressDialog.setMessage("Signing in...");
-
-        findViewById(R.id.upload).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ServiceLocator.getDataUploadService().uploadArtist(App.actArtist,
-                        new DataUploadService.SuccessCallback() {
-                            @Override
-                            public void onSuccess() {
-                                new AlertDialog.Builder(UploadVideoActivity.this)
-                                        .setMessage("Artist is saved")
-                                        .setPositiveButton("OK",null)
-                                        .show();
-                            }
-                        },
-                        new DataUploadService.FailCallback() {
-                            @Override
-                            public void onFail() {
-                                new AlertDialog.Builder(UploadVideoActivity.this)
-                                        .setMessage("There was a problem")
-                                        .setPositiveButton("OK",null)
-                                        .show();
-                            }
-                        }
-                );
-            }
-        });
     }
 
     private void wireButtons() {
