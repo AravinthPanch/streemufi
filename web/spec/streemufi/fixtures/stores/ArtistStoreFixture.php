@@ -15,6 +15,9 @@ class ArtistStoreFixture extends Fixture {
     /** @var ArtistStore */
     private $store;
 
+    /** @var array */
+    private $artist;
+
     public function __construct(Specification $spec, Factory $factory) {
         parent::__construct($spec, $factory);
 
@@ -39,7 +42,7 @@ class ArtistStoreFixture extends Fixture {
     }
 
     public function whenIReadTheArtistWithTheKey($string) {
-        $this->store->readByKey($string);
+        $this->artist = $this->store->readByKey($string);
     }
 
     public function thenTheRequestShould_TheUrl($method, $url) {
@@ -62,5 +65,9 @@ class ArtistStoreFixture extends Fixture {
 
     public function givenTheRequestThrowsAnException() {
         $this->request->__mock()->method('send')->willThrow(new \Exception());
+    }
+
+    public function thenThe_ShouldBe($field, $value) {
+        $this->spec->assertEquals($value, $this->artist[$field]);
     }
 }

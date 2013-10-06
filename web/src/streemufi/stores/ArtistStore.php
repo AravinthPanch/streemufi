@@ -34,7 +34,8 @@ class ArtistStore {
     }
 
     public function readByKey($key) {
-        return $this->get('artist/' . $key);
+        $response = $this->get('artist/' . $key);
+        return $response['artist'];
     }
 
     private function get($resource) {

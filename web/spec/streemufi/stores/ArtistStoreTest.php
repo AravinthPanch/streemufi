@@ -37,8 +37,20 @@ class ArtistStoreTest extends Specification {
     }
 
     function testReadByKey() {
+        $this->store->givenTheResponseIs('{
+            "artist": {
+                    "key": "Bart",
+                    "name": "El Barto",
+                    "url": "localhost/artist/Bart",
+                    "contact": "01234123",
+                    "location": "berlin",
+                    "text": "Hola",
+                    "video": "http://myawesomevideo.com"
+            }
+        }');
         $this->store->whenIReadTheArtistWithTheKey('MyKey');
         $this->store->thenTheRequestShould_TheUrl('get', 'artist/MyKey');
+        $this->store->thenThe_ShouldBe('key', 'Bart');
     }
 
 }

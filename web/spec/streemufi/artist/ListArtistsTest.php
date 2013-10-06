@@ -22,7 +22,7 @@ class ListArtistsTest extends Specification {
         $this->component->whenIOpenTheList();
         $this->component->thenThereShouldBe_Artists(2);
         $this->component->thenArtist_ShouldHaveTheName(1, 'El Barto');
-        $this->component->thenArtist_ShouldHaveTheVanityUrl(1, 'streemufi.com/artist/Bart');
+        $this->component->thenArtist_ShouldHaveTheVanityUrl(1, 'http://localhost/artist/Bart');
         $this->component->thenArtist_ShouldHaveTheName(2, 'El Homo');
     }
 

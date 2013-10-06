@@ -34,7 +34,6 @@ class ArtistFixture extends Fixture {
         $this->artists[$key] = array(
             'name' => $name,
             'key' => $key,
-            'url' => 'streemufi.com/artist/'  . $key,
             'location' => null,
             'text' => null,
             'contact' => null,
