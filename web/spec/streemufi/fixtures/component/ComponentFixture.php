@@ -29,8 +29,13 @@ abstract class ComponentFixture extends Fixture {
             $this->component->getResponse()->getHeaders()->get(Response::HEADER_LOCATION));
     }
 
+    public function thenIShouldNotBeRedirected() {
+        $this->spec->assertFalse(
+            $this->component->getResponse()->getHeaders()->has(Response::HEADER_LOCATION), 'Was redirected');
+    }
+
     protected function getFieldIn($string, $field) {
-        $this->spec->assertTrue(is_array($field), $string . ' is not an array');
+        $this->spec->assertTrue(is_array($field), print_r($field, true) . ' is not an array');
 
         foreach (explode('/', $string) as $key) {
             if (!array_key_exists($key, $field)) {

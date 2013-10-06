@@ -44,42 +44,45 @@
     <!-- /.container -->
 </nav>
 
-<div class="container">
+<div property="profile" class="container">
 
     <div class="row">
 
         <div class="col-lg-8">
-            <h1 class="page-header">Artist 1 <!-- <small>Showcase Your Work One Column at a Time</small> --></h1>
+            <h1 property="name" class="page-header">Artist 1 <!-- <small>Showcase Your Work One Column at a Time</small> --></h1>
         </div>
 
     </div>
 
     <div class="row">
 
-        <div class="col-lg-8 col-md-8">
+        <div property="video" class="col-lg-8 col-md-8">
             <div class="elastic-video-wrapper">
                 <div class="elastic-video">
-                    <iframe src="https://www.youtube-nocookie.com/embed/mS8eipuXYWg?wmode=opaque" width="610"
+                    <iframe property="embedded" src="https://www.youtube-nocookie.com/embed/mS8eipuXYWg?wmode=opaque" width="610"
                             height="343"></iframe>
                 </div>
             </div>
         </div>
 
         <div class="col-lg-8 col-md-8">
-            <h3>Artist One</h3>
-            <h4>Subheading</h4>
+            <h3 property="name">Artist One</h3>
+            <h4 property="location">Subheading</h4>
 
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque
-                urna varius vitae. Sed dui lorem, adipiscing in adipiscing et, interdum nec metus. Mauris ultricies,
-                justo eu convallis placerat, felis enim.</p>
+            <div property="text">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque
+                    urna varius vitae. Sed dui lorem, adipiscing in adipiscing et, interdum nec metus. Mauris ultricies,
+                    justo eu convallis placerat, felis enim.</p>
 
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque
-                urna varius vitae. Sed dui lorem, adipiscing in adipiscing et, interdum nec metus. Mauris ultricies,
-                justo eu convallis placerat, felis enim.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque
+                    urna varius vitae. Sed dui lorem, adipiscing in adipiscing et, interdum nec metus. Mauris ultricies,
+                    justo eu convallis placerat, felis enim.</p>
+            </div>
         </div>
         <div class="col-lg-8 col-md-8 small-top-buffer bottom-buffer">
             <hr/>
-            <a class="btn btn-primary btn-lg" href="#">Book Artist</a>
+            <span class="btn btn-primary btn-lg">Book Artist</span>
+            <span property="contact">+49 151 23456789</span>
         </div>
     </div>
 </div>

@@ -33,4 +33,8 @@ class ArtistStore {
             return array();
         }
     }
+
+    public function readByKey($key) {
+        throw new \Exception('Not implemented');
+    }
 }
