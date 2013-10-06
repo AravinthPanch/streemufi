@@ -18,6 +18,8 @@ footer {
 
 .bottom-buffer {margin-bottom: 100px;}
 
+.headline {margin-top: 32px; color: #ffffff;}
+
 /** video embedding http://www.elmastudio.de/programmierung/css/css-tipp-eingebettete-videos-fur-responsive-webdesigns-optimieren/ **/
 .elastic-video {
 	position: relative;
