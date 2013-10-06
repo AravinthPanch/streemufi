@@ -32,7 +32,7 @@ public class EditDataActivity extends Activity {
                             @Override
                             public void onSuccess(final String id) {
 
-                                final String url="http://streemuf.caelum.uberspace.de/artist/"+id;
+                                final String url="http://streemuf.caelum.uberspace.de/artist/"+id.replace("\"","");
                                 new AlertDialog.Builder(EditDataActivity.this)
                                         .setMessage("Artist is saved " + url)
                                         .setPositiveButton("OK", null)
