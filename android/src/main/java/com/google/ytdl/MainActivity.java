@@ -514,13 +514,6 @@ public class MainActivity extends Activity implements
 	}
 
 	@Override
-	public void onBackPressed() {
-		// if (mDirectFragment.popPlayerFromBackStack()) {
-		// super.onBackPressed();
-		// }
-	}
-
-	@Override
 	public ImageFetcher onGetImageFetcher() {
 		ensureFetcher();
 		return mImageFetcher;

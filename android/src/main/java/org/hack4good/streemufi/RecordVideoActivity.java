@@ -60,6 +60,8 @@ public class RecordVideoActivity extends Activity {
         String textExtra = getIntent().getStringExtra(Intent.EXTRA_TEXT);
         if (textExtra !=null) {
             urlEditText.setText(textExtra);
+        } else if (App.actArtist.url!=null) {
+            urlEditText.setText(App.actArtist.url);
         }
     }
 
