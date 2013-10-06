@@ -35,10 +35,8 @@ abstract class ComponentFixture extends Fixture {
     }
 
     protected function getFieldIn($string, $field) {
-        $this->spec->assertTrue(is_array($field), print_r($field, true) . ' is not an array');
-
         foreach (explode('/', $string) as $key) {
-            if (!array_key_exists($key, $field)) {
+            if (!is_array($field) || !array_key_exists($key, $field)) {
                 throw new \Exception("Could not find '$key' in " . json_encode($field));
             }
             $field = $field[$key];

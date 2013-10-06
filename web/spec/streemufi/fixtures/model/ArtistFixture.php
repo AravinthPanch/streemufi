@@ -35,7 +35,10 @@ class ArtistFixture extends Fixture {
             'name' => $name,
             'key' => $key,
             'url' => 'streemufi.com/artist/'  . $key,
-            'location' => null
+            'location' => null,
+            'text' => null,
+            'contact' => null,
+            'video' => null
         );
     }
 

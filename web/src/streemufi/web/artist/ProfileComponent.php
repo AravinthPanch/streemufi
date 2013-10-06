@@ -5,7 +5,6 @@ use streemufi\stores\ArtistStore;
 use watoki\curir\controller\Component;
 use watoki\curir\controller\Module;
 use watoki\curir\Path;
-use watoki\curir\renderer\RendererFactory;
 use watoki\curir\Url;
 use watoki\factory\Factory;
 
@@ -44,9 +43,19 @@ class ProfileComponent extends Component {
                     '_' => $artist['video'],
                     'href' => $artist['video']
                 ),
-                'embedded' => null
+                'embedded' => $this->getEmbeddedUrl($artist['video'])
             )
         );
+    }
+
+    private function getEmbeddedUrl($video) {
+        $matches = array();
+        if (preg_match('#youtube\.com/watch\?v=([^&]+)#', $video, $matches)) {
+            return array(
+                'src' => 'https://www.youtube-nocookie.com/embed/' . $matches[1] . '?wmode=opaque'
+            );
+        }
+        return null;
     }
 
 } 

@@ -31,6 +31,10 @@ class ProfileComponentFixture extends ComponentFixture {
         $this->spec->assertEquals($string, $this->getField('profile/video/url/href'));
     }
 
+    public function thenTheVideoShouldBeEmbeddedWith($url) {
+        $this->spec->assertEquals($url, $this->getField('profile/video/embedded/src'));
+    }
+
     protected function getComponentClass() {
         return ProfileComponent::$CLASS;
     }

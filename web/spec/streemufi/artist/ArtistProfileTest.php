@@ -33,7 +33,12 @@ class ArtistProfileTest extends Specification {
     }
 
     function testEmbeddedVideo() {
-        $this->markTestIncomplete();
+        $this->artist->givenTheArtist_WithTheKey('El Barto', 'Bart');
+        $this->artist->given_HasThe_('Bart', 'video', 'http://www.youtube.com/watch?v=oMyG0d');
+
+        $this->component->whenIOpenTheProfileOf('Bart');
+
+        $this->component->thenTheVideoShouldBeEmbeddedWith('https://www.youtube-nocookie.com/embed/oMyG0d?wmode=opaque');
     }
 
     function testUrlAsContact() {
