@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "14dcaae284e8e4e884c5026ddf65c08e",
+    "hash": "3253c0af91dd12e21c672bec7405b1eb",
     "packages": [
         {
             "name": "guzzle/guzzle",
@@ -11,12 +11,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "e62f205c834a23e3a8c5933b1748f3336721bcc1"
+                "reference": "525576eb863b9e2ff6af98d959cdf390f2571ddc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/e62f205c834a23e3a8c5933b1748f3336721bcc1",
-                "reference": "e62f205c834a23e3a8c5933b1748f3336721bcc1",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/525576eb863b9e2ff6af98d959cdf390f2571ddc",
+                "reference": "525576eb863b9e2ff6af98d959cdf390f2571ddc",
                 "shasum": ""
             },
             "require": {
@@ -95,7 +95,7 @@
                 "rest",
                 "web service"
             ],
-            "time": "2013-10-16 00:14:18"
+            "time": "2013-10-24 00:04:09"
         },
         {
             "name": "nikic/php-parser",
@@ -246,12 +246,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/watoki/curir.git",
-                "reference": "412d966053c78c06f7b5f666a02cbf2206043fe1"
+                "reference": "af1ac0b1135d67ff8d4f0ec782b0441b30cdfe15"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/watoki/curir/zipball/412d966053c78c06f7b5f666a02cbf2206043fe1",
-                "reference": "412d966053c78c06f7b5f666a02cbf2206043fe1",
+                "url": "https://api.github.com/repos/watoki/curir/zipball/af1ac0b1135d67ff8d4f0ec782b0441b30cdfe15",
+                "reference": "af1ac0b1135d67ff8d4f0ec782b0441b30cdfe15",
                 "shasum": ""
             },
             "require": {
@@ -288,7 +288,7 @@
                 "routing",
                 "watoki"
             ],
-            "time": "2013-10-23 21:40:53"
+            "time": "2013-10-25 10:45:10"
         },
         {
             "name": "watoki/dom",
@@ -296,12 +296,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/watoki/dom.git",
-                "reference": "3a45110ea6def05eb0a32e4c6f603e58346e5cd9"
+                "reference": "27e264be3fc2dd216b235744829513f3db49463a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/watoki/dom/zipball/3a45110ea6def05eb0a32e4c6f603e58346e5cd9",
-                "reference": "3a45110ea6def05eb0a32e4c6f603e58346e5cd9",
+                "url": "https://api.github.com/repos/watoki/dom/zipball/27e264be3fc2dd216b235744829513f3db49463a",
+                "reference": "27e264be3fc2dd216b235744829513f3db49463a",
                 "shasum": ""
             },
             "require": {
@@ -332,7 +332,7 @@
                 "parser",
                 "watoki"
             ],
-            "time": "2013-04-20 08:50:09"
+            "time": "2013-10-25 08:40:11"
         },
         {
             "name": "watoki/factory",
@@ -340,12 +340,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/watoki/factory.git",
-                "reference": "fa24217e3631fcfe6d45efd4ee8e9cff8f405480"
+                "reference": "3538dcdf1e55b8c2cab408eb3fcdfb532ad84650"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/watoki/factory/zipball/fa24217e3631fcfe6d45efd4ee8e9cff8f405480",
-                "reference": "fa24217e3631fcfe6d45efd4ee8e9cff8f405480",
+                "url": "https://api.github.com/repos/watoki/factory/zipball/3538dcdf1e55b8c2cab408eb3fcdfb532ad84650",
+                "reference": "3538dcdf1e55b8c2cab408eb3fcdfb532ad84650",
                 "shasum": ""
             },
             "require": {
@@ -379,7 +379,7 @@
                 "dependency injection",
                 "watoki"
             ],
-            "time": "2013-10-08 15:13:01"
+            "time": "2013-10-25 10:55:46"
         },
         {
             "name": "watoki/smokey",
