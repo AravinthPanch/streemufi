@@ -2,16 +2,15 @@
 namespace spec\streemufi\fixtures\component\artist;
 
 use spec\streemufi\fixtures\component\ComponentFixture;
-use streemufi\web\artist\ProfileComponent;
+use streemufi\web\streemufi\artist\xxArtistResource;
 
 /**
- * @property ProfileComponent component
- * @property ProfileComponent component
+ * @property xxArtistResource $resource
  */
-class ProfileComponentFixture extends ComponentFixture {
+class ArtistResourceFixture extends ComponentFixture {
 
     public function whenIOpenTheProfileOf($key) {
-        $this->model = $this->component->doGet($key);
+        $this->responder = $this->resource->doGet($key);
     }
 
     public function thenHisNameShouldBe($string) {
@@ -40,7 +39,7 @@ class ProfileComponentFixture extends ComponentFixture {
         $this->spec->assertEquals($url, $this->getField('profile/video/embedded/src'));
     }
 
-    protected function getComponentClass() {
-        return ProfileComponent::$CLASS;
+    protected function getResourceClass() {
+        return xxArtistResource::$CLASS;
     }
 }

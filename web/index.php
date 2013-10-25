@@ -1,18 +1,20 @@
 <?php
 
-$factory = require_once("bootstrap.php");
+require_once("bootstrap.php");
 
-use streemufi\web\StreemufiModule;
-use streemufi\WebApplication;
+$factory = new \watoki\factory\Factory();
+$factory->setProvider('StdClass', new \watoki\factory\providers\PropertyInjectionProvider($factory));
 
-$route = $_REQUEST['_'];
-unset($_REQUEST['_']);
-$request = $_REQUEST['-'];
-unset($_REQUEST['-']);
+$userConfig = __DIR__ . '/usr/configuration.php';
+if (file_exists($userConfig)) {
+    /** @var callable $loader */
+    $loader = require_once($userConfig);
+    $loader($factory);
+}
 
 try {
-    $app = new WebApplication($route, StreemufiModule::$CLASS, $factory);
-    $app->handleRequest($request);
+    $app = new watoki\curir\WebApplication(streemufi\web\StreemufiResource::$CLASS, $factory);
+    $app->run();
 } catch (Exception $e) {
     echo "Something went wrong. Sorry. <!-- " . $e;
 }

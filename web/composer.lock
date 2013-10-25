@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "3253c0af91dd12e21c672bec7405b1eb",
+    "hash": "14dcaae284e8e4e884c5026ddf65c08e",
     "packages": [
         {
             "name": "guzzle/guzzle",
@@ -11,12 +11,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "b170b028c6bb5799640e46c8803015b0f9a45ed9"
+                "reference": "e62f205c834a23e3a8c5933b1748f3336721bcc1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/b170b028c6bb5799640e46c8803015b0f9a45ed9",
-                "reference": "b170b028c6bb5799640e46c8803015b0f9a45ed9",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/e62f205c834a23e3a8c5933b1748f3336721bcc1",
+                "reference": "e62f205c834a23e3a8c5933b1748f3336721bcc1",
                 "shasum": ""
             },
             "require": {
@@ -95,7 +95,7 @@
                 "rest",
                 "web service"
             ],
-            "time": "2013-10-02 20:47:00"
+            "time": "2013-10-16 00:14:18"
         },
         {
             "name": "nikic/php-parser",
@@ -148,12 +148,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/EventDispatcher.git",
-                "reference": "9b4fe5757870682eb2251e283228a66d938265a8"
+                "reference": "d51d78b34c1d9dcc384ba48155105fe99284dd67"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/EventDispatcher/zipball/9b4fe5757870682eb2251e283228a66d938265a8",
-                "reference": "9b4fe5757870682eb2251e283228a66d938265a8",
+                "url": "https://api.github.com/repos/symfony/EventDispatcher/zipball/d51d78b34c1d9dcc384ba48155105fe99284dd67",
+                "reference": "d51d78b34c1d9dcc384ba48155105fe99284dd67",
                 "shasum": ""
             },
             "require": {
@@ -193,7 +193,7 @@
             ],
             "description": "Symfony EventDispatcher Component",
             "homepage": "http://symfony.com",
-            "time": "2013-09-19 09:47:34"
+            "time": "2013-10-17 11:48:11"
         },
         {
             "name": "watoki/collections",
@@ -201,12 +201,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/watoki/collections.git",
-                "reference": "730ee35376031d3d022761a05db81be5d0e51a15"
+                "reference": "4c2f4359cd27035e9ff13ec4c24cfb4baa62865c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/watoki/collections/zipball/730ee35376031d3d022761a05db81be5d0e51a15",
-                "reference": "730ee35376031d3d022761a05db81be5d0e51a15",
+                "url": "https://api.github.com/repos/watoki/collections/zipball/4c2f4359cd27035e9ff13ec4c24cfb4baa62865c",
+                "reference": "4c2f4359cd27035e9ff13ec4c24cfb4baa62865c",
                 "shasum": ""
             },
             "require": {
@@ -238,7 +238,7 @@
                 "data structure",
                 "watoki"
             ],
-            "time": "2013-04-19 09:47:59"
+            "time": "2013-10-18 05:16:42"
         },
         {
             "name": "watoki/curir",
@@ -246,19 +246,21 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/watoki/curir.git",
-                "reference": "5e6e8c98c8e11ee6ce243a7a69535274990400fd"
+                "reference": "412d966053c78c06f7b5f666a02cbf2206043fe1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/watoki/curir/zipball/5e6e8c98c8e11ee6ce243a7a69535274990400fd",
-                "reference": "5e6e8c98c8e11ee6ce243a7a69535274990400fd",
+                "url": "https://api.github.com/repos/watoki/curir/zipball/412d966053c78c06f7b5f666a02cbf2206043fe1",
+                "reference": "412d966053c78c06f7b5f666a02cbf2206043fe1",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.8",
                 "watoki/collections": "*",
-                "watoki/dom": "*",
                 "watoki/factory": "*"
+            },
+            "require-dev": {
+                "watoki/scrut": "*"
             },
             "type": "library",
             "autoload": {
@@ -278,15 +280,15 @@
                     "homepage": "http://rtens.org"
                 }
             ],
-            "description": "Modular web delivery system for PHP applications",
+            "description": "Web delivery system for PHP applications",
             "homepage": "http://github.com/watoki/curir",
             "keywords": [
-                "controller",
-                "modular",
                 "mvc",
+                "router",
+                "routing",
                 "watoki"
             ],
-            "time": "2013-08-28 09:40:12"
+            "time": "2013-10-23 21:40:53"
         },
         {
             "name": "watoki/dom",
@@ -338,12 +340,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/watoki/factory.git",
-                "reference": "1feb6a35e2d3f5c022ac0ea7abc5eaea6cbabcc5"
+                "reference": "fa24217e3631fcfe6d45efd4ee8e9cff8f405480"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/watoki/factory/zipball/1feb6a35e2d3f5c022ac0ea7abc5eaea6cbabcc5",
-                "reference": "1feb6a35e2d3f5c022ac0ea7abc5eaea6cbabcc5",
+                "url": "https://api.github.com/repos/watoki/factory/zipball/fa24217e3631fcfe6d45efd4ee8e9cff8f405480",
+                "reference": "fa24217e3631fcfe6d45efd4ee8e9cff8f405480",
                 "shasum": ""
             },
             "require": {
@@ -377,7 +379,7 @@
                 "dependency injection",
                 "watoki"
             ],
-            "time": "2013-10-05 07:41:09"
+            "time": "2013-10-08 15:13:01"
         },
         {
             "name": "watoki/smokey",
@@ -539,12 +541,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-file-iterator.git",
-                "reference": "2deb24c65ea78e126daa8d45b2089ddc29ec1d26"
+                "reference": "acd690379117b042d1c8af1fafd61bde001bf6bb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-file-iterator/zipball/2deb24c65ea78e126daa8d45b2089ddc29ec1d26",
-                "reference": "2deb24c65ea78e126daa8d45b2089ddc29ec1d26",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-file-iterator/zipball/acd690379117b042d1c8af1fafd61bde001bf6bb",
+                "reference": "acd690379117b042d1c8af1fafd61bde001bf6bb",
                 "shasum": ""
             },
             "require": {
@@ -576,7 +578,7 @@
                 "filesystem",
                 "iterator"
             ],
-            "time": "2013-01-07 10:47:05"
+            "time": "2013-10-10 15:34:57"
         },
         {
             "name": "phpunit/php-text-template",
@@ -672,12 +674,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-token-stream.git",
-                "reference": "5220af2a7929aa35cf663d97c89ad3d50cf5fa3e"
+                "reference": "292f4d5772dad5a12775be69f4a8dd663b20f103"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-token-stream/zipball/5220af2a7929aa35cf663d97c89ad3d50cf5fa3e",
-                "reference": "5220af2a7929aa35cf663d97c89ad3d50cf5fa3e",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-token-stream/zipball/292f4d5772dad5a12775be69f4a8dd663b20f103",
+                "reference": "292f4d5772dad5a12775be69f4a8dd663b20f103",
                 "shasum": ""
             },
             "require": {
@@ -714,7 +716,7 @@
             "keywords": [
                 "tokenizer"
             ],
-            "time": "2013-09-13 04:58:23"
+            "time": "2013-10-21 14:03:39"
         },
         {
             "name": "phpunit/phpunit",
@@ -722,12 +724,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "4b024e753e3421837afbcca962c8724c58b39376"
+                "reference": "598a467a7d234dd78788cd72d5fd58105a1dfd0e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/4b024e753e3421837afbcca962c8724c58b39376",
-                "reference": "4b024e753e3421837afbcca962c8724c58b39376",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/598a467a7d234dd78788cd72d5fd58105a1dfd0e",
+                "reference": "598a467a7d234dd78788cd72d5fd58105a1dfd0e",
                 "shasum": ""
             },
             "require": {
@@ -788,7 +790,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2013-09-16 03:09:52"
+            "time": "2013-10-17 23:32:19"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
@@ -905,12 +907,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Yaml.git",
-                "reference": "ef4878bcca171ebe7466be0505b85a710818d788"
+                "reference": "1f7cabb841e62ec49615bd965ac780fd994b3f64"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Yaml/zipball/ef4878bcca171ebe7466be0505b85a710818d788",
-                "reference": "ef4878bcca171ebe7466be0505b85a710818d788",
+                "url": "https://api.github.com/repos/symfony/Yaml/zipball/1f7cabb841e62ec49615bd965ac780fd994b3f64",
+                "reference": "1f7cabb841e62ec49615bd965ac780fd994b3f64",
                 "shasum": ""
             },
             "require": {
@@ -943,7 +945,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "http://symfony.com",
-            "time": "2013-09-22 18:04:51"
+            "time": "2013-10-17 11:48:11"
         },
         {
             "name": "watoki/scrut",

@@ -1,37 +1,42 @@
 <?php
 namespace spec\streemufi\fixtures\component;
 
-use streemufi\web\StreemufiModule;
-use watoki\curir\Response;
+use watoki\curir\responder\Presenter;
+use watoki\curir\responder\Redirecter;
+use watoki\curir\Responder;
 use watoki\factory\Factory;
+use watoki\factory\providers\PropertyInjectionProvider;
 use watoki\scrut\Fixture;
 use watoki\scrut\Specification;
 
 abstract class ComponentFixture extends Fixture {
 
-    protected $model;
+    /** @var Responder */
+    protected $responder;
 
-    protected $component;
+    protected $resource;
 
-    abstract protected function getComponentClass();
+    abstract protected function getResourceClass();
 
-    public function __construct(Specification $spec, Factory $factory, StreemufiModule $root) {
+    public function __construct(Specification $spec, Factory $factory) {
         parent::__construct($spec, $factory);
+        $factory->setProvider('StdClass', new PropertyInjectionProvider($factory));
 
-        $this->component = $factory->getInstance($this->getComponentClass(), array(
-            'parent' => $root
+        $this->resource = $factory->getInstance($this->getResourceClass(), array(
+            'name' => 'resource',
+            'parent' => null
         ));
     }
 
     public function thenIShouldBeRedirectedTo($url) {
-        $this->spec->assertNull($this->model);
-        $this->spec->assertEquals($url,
-            $this->component->getResponse()->getHeaders()->get(Response::HEADER_LOCATION));
+        $this->spec->assertTrue($this->responder instanceof Redirecter);
+        if ($this->responder instanceof Redirecter) {
+            $this->spec->assertEquals($url, $this->responder->getTarget()->toString());
+        }
     }
 
     public function thenIShouldNotBeRedirected() {
-        $this->spec->assertFalse(
-            $this->component->getResponse()->getHeaders()->has(Response::HEADER_LOCATION), 'Was redirected');
+        $this->spec->assertFalse($this->responder instanceof Redirecter, 'Was redirected');
     }
 
     protected function getFieldIn($string, $field) {
@@ -45,7 +50,12 @@ abstract class ComponentFixture extends Fixture {
     }
 
     protected function getField($string) {
-        return $this->getFieldIn($string, $this->model);
+        if ($this->responder instanceof Presenter) {
+            return $this->getFieldIn($string, $this->responder->getModel());
+        } else {
+            $this->spec->fail('Responder is not presenter');
+            return null;
+        }
     }
 
 } 

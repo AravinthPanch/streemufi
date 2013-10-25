@@ -1,34 +1,25 @@
 <?php
-namespace streemufi\web;
+namespace streemufi\web\streemufi;
 
 use streemufi\Configuration;
 use streemufi\stores\ArtistStore;
-use watoki\curir\controller\Component;
-use watoki\curir\controller\Module;
-use watoki\curir\Path;
-use watoki\factory\Factory;
+use streemufi\web\Presenter;
+use watoki\curir\resource\Container;
 
-class ArtistsComponent extends Component {
+class ArtistsResource extends Container {
 
     static $CLASS = __CLASS__;
 
-    /** @var ArtistStore */
+    /** @var ArtistStore <- */
     private $store;
 
-    /** @var Configuration */
+    /** @var Configuration <- */
     private $config;
 
-    function __construct(Factory $factory, Path $route, Module $parent = null) {
-        parent::__construct($factory, $route, $parent);
-
-        $this->store = $factory->getInstance(ArtistStore::$CLASS);
-        $this->config = $factory->getInstance(Configuration::$CLASS);
-    }
-
     public function doGet() {
-        return array(
+        return new Presenter(array(
             'artist' => $this->assembleArtists()
-        );
+        ));
     }
 
     private function assembleArtists() {

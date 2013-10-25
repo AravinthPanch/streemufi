@@ -2,15 +2,15 @@
 namespace spec\streemufi\fixtures\component\artist;
 
 use spec\streemufi\fixtures\component\ComponentFixture;
-use streemufi\web\ArtistsComponent;
+use streemufi\web\streemufi\ArtistsResource;
 
 /**
- * @property \streemufi\web\ArtistsComponent component
+ * @property ArtistsResource $resource
  */
-class ListComponentFixture extends ComponentFixture {
+class ListResourceFixture extends ComponentFixture {
 
     public function whenIOpenTheList() {
-        $this->model = $this->component->doGet();
+        $this->responder = $this->resource->doGet();
     }
 
     public function thenThereShouldBe_Artists($int) {
@@ -25,8 +25,8 @@ class ListComponentFixture extends ComponentFixture {
         $this->spec->assertEquals($string, $this->getFieldOfArtist($int, 'url/href'));
     }
 
-    protected function getComponentClass() {
-        return \streemufi\web\ArtistsComponent::$CLASS;
+    protected function getResourceClass() {
+        return ArtistsResource::$CLASS;
     }
 
     private function getFieldOfArtist($int, $field) {

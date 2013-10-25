@@ -1,33 +1,31 @@
 <?php
-namespace streemufi\web\artist;
+namespace streemufi\web\streemufi\artist;
 
 use streemufi\stores\ArtistStore;
-use watoki\curir\controller\Component;
-use watoki\curir\controller\Module;
-use watoki\curir\Path;
-use watoki\curir\Url;
-use watoki\factory\Factory;
+use streemufi\web\Presenter;
+use watoki\curir\http\Url;
+use watoki\curir\Resource;
+use watoki\curir\resource\DynamicResource;
+use watoki\curir\responder\Redirecter;
 
-class ProfileComponent extends Component {
+class xxArtistResource extends DynamicResource {
 
     public static $CLASS = __CLASS__;
 
-    /** @var ArtistStore */
+    /** @var ArtistStore <- */
     private $store;
 
-    function __construct(Factory $factory, Path $route, Module $parent = null) {
-        parent::__construct($factory, $route, $parent);
-
-        $this->store = $factory->getInstance(ArtistStore::$CLASS);
+    protected function getPlaceholderKey() {
+        return 'key';
     }
 
     public function doGet($key) {
         try {
-            return array(
+            return new Presenter(array(
                 'profile' => $this->assembleProfile($key)
-            );
+            ));
         } catch (\Exception $e) {
-            return $this->redirect(Url::parse('../artists'));
+            return new Redirecter(Url::parse('../artists'));
         }
     }
 
@@ -73,5 +71,4 @@ class ProfileComponent extends Component {
             return $contact;
         }
     }
-
-} 
+}

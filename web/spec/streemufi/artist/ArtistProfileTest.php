@@ -1,13 +1,13 @@
 <?php
 namespace spec\streemufi\artist;
 
-use spec\streemufi\fixtures\component\artist\ProfileComponentFixture;
+use spec\streemufi\fixtures\component\artist\ArtistResourceFixture;
 use spec\streemufi\fixtures\model\ArtistFixture;
 use watoki\scrut\Specification;
 
 /**
  * @property ArtistFixture artist <-
- * @property ProfileComponentFixture component <-
+ * @property ArtistResourceFixture component <-
  */
 class ArtistProfileTest extends Specification {
 
