@@ -1,6 +1,7 @@
 package org.hack4good.streemufi;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.IntentSender;
@@ -11,6 +12,8 @@ import android.widget.Toast;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesClient;
 import com.google.android.gms.plus.PlusClient;
+
+import org.hack4good.streemufi.upload.DataUploadService;
 
 public class UploadVideoActivity extends Activity implements GooglePlayServicesClient.ConnectionCallbacks, GooglePlayServicesClient.OnConnectionFailedListener {
 
@@ -23,8 +26,8 @@ public class UploadVideoActivity extends Activity implements GooglePlayServicesC
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setTitle("Step 2 - upload the Video");
-        setContentView(R.layout.upload_layout);
+        setTitle("Step 3 - Upload");
+        setContentView(R.layout.activity_upload);
 
         wireButtons();
 
@@ -36,6 +39,31 @@ public class UploadVideoActivity extends Activity implements GooglePlayServicesC
         mConnectionProgressDialog = new ProgressDialog(this);
         mConnectionProgressDialog.setMessage("Signing in...");
 
+        findViewById(R.id.upload).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ServiceLocator.getDataUploadService().uploadArtist(App.actArtist,
+                        new DataUploadService.SuccessCallback() {
+                            @Override
+                            public void onSuccess() {
+                                new AlertDialog.Builder(UploadVideoActivity.this)
+                                        .setMessage("Artist is saved")
+                                        .setPositiveButton("OK",null)
+                                        .show();
+                            }
+                        },
+                        new DataUploadService.FailCallback() {
+                            @Override
+                            public void onFail() {
+                                new AlertDialog.Builder(UploadVideoActivity.this)
+                                        .setMessage("There was a problem")
+                                        .setPositiveButton("OK",null)
+                                        .show();
+                            }
+                        }
+                );
+            }
+        });
     }
 
     private void wireButtons() {
@@ -46,7 +74,7 @@ public class UploadVideoActivity extends Activity implements GooglePlayServicesC
             }
         });
 
-        findViewById(R.id.nextButton).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.upload).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(UploadVideoActivity.this, EditDataActivity.class);
@@ -73,6 +101,11 @@ public class UploadVideoActivity extends Activity implements GooglePlayServicesC
     public void onConnected(Bundle bundle) {
         String accountName = mPlusClient.getAccountName();
         Toast.makeText(this, accountName + " is connected.", Toast.LENGTH_LONG).show();
+
+        findViewById(R.id.sign_in_button).setVisibility(View.GONE);
+
+        mConnectionProgressDialog.dismiss();
+        mConnectionProgressDialog.cancel();
     }
 
     @Override
