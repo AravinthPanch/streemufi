@@ -9,11 +9,7 @@ class Configuration {
         return 'http://localhost/v1';
     }
 
-    public function getArtistUrl($key) {
-        return $this->getBaseUrl() . '/artist/' . $key;
-    }
-
-    public function getBaseUrl() {
+    public function getHostUrl() {
         return 'http://localhost';
     }
 }

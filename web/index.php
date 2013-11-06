@@ -3,7 +3,6 @@
 require_once("bootstrap.php");
 
 $factory = new \watoki\factory\Factory();
-$factory->setProvider('StdClass', new \watoki\factory\providers\PropertyInjectionProvider($factory));
 
 $userConfig = __DIR__ . '/usr/configuration.php';
 if (file_exists($userConfig)) {
@@ -12,8 +11,12 @@ if (file_exists($userConfig)) {
     $loader($factory);
 }
 
+/** @var \streemufi\Configuration $config */
+$config = $factory->getInstance(\streemufi\Configuration::$CLASS);
+
 try {
-    $app = new watoki\curir\WebApplication(streemufi\web\StreemufiResource::$CLASS, $factory);
+    $app = new watoki\curir\WebApplication(streemufi\web\StreemufiResource::$CLASS,
+        \watoki\curir\http\Url::parse($config->getHostUrl()), $factory);
     $app->run();
 } catch (Exception $e) {
     echo "Something went wrong. Sorry. <!-- " . $e;

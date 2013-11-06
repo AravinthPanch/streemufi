@@ -1,13 +1,13 @@
 <?php
 namespace spec\streemufi\fixtures\component\artist;
 
-use spec\streemufi\fixtures\component\ComponentFixture;
+use spec\streemufi\fixtures\component\ResourceFixture;
 use streemufi\web\streemufi\artist\xxArtistResource;
 
 /**
  * @property xxArtistResource $resource
  */
-class ArtistResourceFixture extends ComponentFixture {
+class ArtistResourceFixture extends ResourceFixture {
 
     public function whenIOpenTheProfileOf($key) {
         $this->responder = $this->resource->doGet($key);

@@ -1,13 +1,13 @@
 <?php
 namespace spec\streemufi\fixtures\component\artist;
 
-use spec\streemufi\fixtures\component\ComponentFixture;
+use spec\streemufi\fixtures\component\ResourceFixture;
 use streemufi\web\streemufi\ArtistsResource;
 
 /**
  * @property ArtistsResource $resource
  */
-class ListResourceFixture extends ComponentFixture {
+class ListResourceFixture extends ResourceFixture {
 
     public function whenIOpenTheList() {
         $this->responder = $this->resource->doGet();

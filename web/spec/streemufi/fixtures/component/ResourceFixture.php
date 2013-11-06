@@ -1,6 +1,9 @@
 <?php
 namespace spec\streemufi\fixtures\component;
 
+use streemufi\web\StreemufiResource;
+use watoki\curir\http\Path;
+use watoki\curir\http\Url;
 use watoki\curir\responder\Presenter;
 use watoki\curir\responder\Redirecter;
 use watoki\curir\Responder;
@@ -9,7 +12,7 @@ use watoki\factory\providers\PropertyInjectionProvider;
 use watoki\scrut\Fixture;
 use watoki\scrut\Specification;
 
-abstract class ComponentFixture extends Fixture {
+abstract class ResourceFixture extends Fixture {
 
     /** @var Responder */
     protected $responder;
@@ -20,11 +23,15 @@ abstract class ComponentFixture extends Fixture {
 
     public function __construct(Specification $spec, Factory $factory) {
         parent::__construct($spec, $factory);
-        $factory->setProvider('StdClass', new PropertyInjectionProvider($factory));
+
+        $root = $factory->getInstance(StreemufiResource::$CLASS, array(
+            'url' => Url::parse('http://localhost'),
+            'parent' => null
+        ));
 
         $this->resource = $factory->getInstance($this->getResourceClass(), array(
-            'name' => 'resource',
-            'parent' => null
+            'url' => Url::parse('http://localhost/test'),
+            'parent' => $root
         ));
     }
 

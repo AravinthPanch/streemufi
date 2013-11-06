@@ -4,6 +4,7 @@ namespace streemufi\web\streemufi;
 use streemufi\Configuration;
 use streemufi\stores\ArtistStore;
 use streemufi\web\Presenter;
+use streemufi\web\StreemufiResource;
 use watoki\curir\resource\Container;
 
 class ArtistsResource extends Container {
@@ -25,10 +26,14 @@ class ArtistsResource extends Container {
     private function assembleArtists() {
         $artists = array();
         foreach ($this->store->readAll() as $artist) {
+            $url = $this->getAncestor(StreemufiResource::$CLASS)->getUrl()->copy();
+            $url->getPath()->append('artist');
+            $url->getPath()->append($artist['key']);
+
             $artists[] = array(
                 'name' => $artist['name'],
                 'url' => array(
-                    'href' => $this->config->getArtistUrl($artist['key'])
+                    'href' => $url->toString()
                 ),
                 'location' => null
             );
